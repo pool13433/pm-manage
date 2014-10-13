@@ -20,7 +20,7 @@
             <thead>
                 <tr>
                     <th>รายละเอียด</th>
-                    <th style="width: 20%">เครื่องมือ</th>
+                    <th>เครื่องมือ</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,7 +33,7 @@
                                     <i class="icon-time icon-3x"></i>
                                     <span> ระยะเวลา</span>
                                     <?php
-                                    $datetotal = DateUtil::calculateDate($data['event_finishdate'], $data['event_enddate']); //$data['event_enddate'] - $data['event_startdate'];
+                                    $datetotal =  DateUtil::calculateDate(date('Y-m-d'),$data['event_finishdate']); //$data['event_enddate'] - $data['event_startdate'];
                                     //echo 'datetotal : ' . $datetotal;
                                     if ($datetotal < 0):
                                         echo '<span class="label label-danger">' . $datetotal . '</span>';
@@ -54,8 +54,15 @@
                                         <span class="label label-info">ชื่อ ผู้รับผิดชอบ :  <?= $data['member']['mem_fname'] ?></span>
                                     </div>
                                     <div class="col-md-4">
-                                        <span class="label label-danger">วันที่ต้องทำ :  <?=$data['event_startday']?>
-                                        </span>
+                                        <?php
+                                        if ($data['event_priority'] == 0):
+                                            echo '<span class="label label-info">ธรรมดา</span>';
+                                        elseif ($data['event_priority'] == 1):
+                                            echo '<span class="label label-warning">ด่วน</span>';
+                                        elseif ($data['event_priority'] == 2):
+                                            echo '<span class="label label-danger">ด่วนมากที่สุด</span>';
+                                        endif;
+                                        ?>                                        
                                     </div>
                                 </div>
                                 <div class="row" style="padding-bottom: 15px;">
@@ -92,16 +99,20 @@
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        <td style="width: 23%">
                             <div class="btn-group">
                                 <button class="btn btn-primary btn-sm btn-rect dropdown-toggle" data-toggle="dropdown">
                                     <i class="icon-cog"></i> ปรับสถานะ<span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" onclick="return changeStatusUtil(<?= $data['event_id'] ?>, '0','index.php?r=Event/ChangeEventStatus')">รอ</a></li>
-                                    <li><a href="#" onclick="return changeStatusUtil(<?= $data['event_id'] ?>, '1','index.php?r=Event/ChangeEventStatus')">ดำนินการ</a></li>
-                                    <li><a href="#" onclick="return changeStatusUtil(<?= $data['event_id'] ?>, '2','index.php?r=Event/ChangeEventStatus')">เสร็จสิ้น</a></li>
+                                    <li><a href="#" onclick="return changeStatusUtil(<?= $data['event_id'] ?>, '0', 'index.php?r=Event/ChangeEventStatus')">รอ</a></li>
+                                    <li><a href="#" onclick="return changeStatusUtil(<?= $data['event_id'] ?>, '1', 'index.php?r=Event/ChangeEventStatus')">ดำนินการ</a></li>
+                                    <li><a href="#" onclick="return changeStatusUtil(<?= $data['event_id'] ?>, '2', 'index.php?r=Event/ChangeEventStatus')">เสร็จสิ้น</a></li>
                                     <li class="divider"></li>
                                 </ul>
+                                <a href="<?= Yii::app()->createUrl('Event/NewEvent', array('id' => $data['event_id'])) ?>" class="btn btn-info btn-sm btn-rect" >
+                                    <i class="icon-pencil"></i> แก้ไข</a>
+                                <button type="button" class="btn btn-danger btn-sm btn-rect" onclick="deleteItem(<?=$data['event_id']?>,'index.php?r=Event/DeleteEvent')">
+                                    <i class="icon-trash"></i> ลบ</button>
                             </div>
                         </td>
                     </tr>
@@ -128,14 +139,14 @@
             <tbody>
 <?php for ($i = 0; $i < count($listevent); $i++): ?>
     <?php $data = $listevent[$i]; ?>
-                                                                                                                            <tr>
-                                                                                                                                <td><?= ($i + 1) ?></td>
-                                                                                                                                <td><?= $data['event_name'] ?></td>
-                                                                                                                                <td><?= $data['event_detail'] ?></td>
-                                                                                                                                <td><?= $data['event_createdate'] ?></td>
-                                                                                                                                <td><?= $data['event_startdate'] ?></td>
-                                                                                                                                <td><?= $data['event_enddate'] ?></td>
-                                                                                                                                <td>
+                                                                                                                                            <tr>
+                                                                                                                                                <td><?= ($i + 1) ?></td>
+                                                                                                                                                <td><?= $data['event_name'] ?></td>
+                                                                                                                                                <td><?= $data['event_detail'] ?></td>
+                                                                                                                                                <td><?= $data['event_createdate'] ?></td>
+                                                                                                                                                <td><?= $data['event_startdate'] ?></td>
+                                                                                                                                                <td><?= $data['event_enddate'] ?></td>
+                                                                                                                                                <td>
     <?php
     if ($data['event_status'] == 0):
         echo '<span class="label label-warning">รอ</span>';
@@ -145,19 +156,19 @@
         echo '<span class="label label-success">Success</span>';
     endif;
     ?>
-                                                                                                                                </td>
-                                                                                                                                <td>
-                                                                                                                                    <div class="btn-group">                                                                
-                                                                                                                                        <button type="button" class="btn btn-danger btn-xs"><i class="icon-trash "></i> ลบ</button>
-                                                                                                                                        <button class="btn btn-warning btn-xl dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                                                                                                                                        <ul class="dropdown-menu">
-                                                                                                                                            <li><a href="#">Action</a></li>
-                                                                                                                                            <li><a href="#">Another action</a></li>
-                                                                                                                                            <li><a href="#">Something else here</a></li>
-                                                                                                                                        </ul>
-                                                                                                                                    </div>
-                                                                                                                                </td>
-                                                                                                                            </tr>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <div class="btn-group">                                                                
+                                                                                                                                                        <button type="button" class="btn btn-danger btn-xs"><i class="icon-trash "></i> ลบ</button>
+                                                                                                                                                        <button class="btn btn-warning btn-xl dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                                                                                                                                        <ul class="dropdown-menu">
+                                                                                                                                                            <li><a href="#">Action</a></li>
+                                                                                                                                                            <li><a href="#">Another action</a></li>
+                                                                                                                                                            <li><a href="#">Something else here</a></li>
+                                                                                                                                                        </ul>
+                                                                                                                                                    </div>
+                                                                                                                                                </td>
+                                                                                                                                            </tr>
 <?php endfor; ?>
             </tbody>
         </table>

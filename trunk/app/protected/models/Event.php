@@ -28,12 +28,12 @@ class Event extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('event_name, event_detail, event_createdate, event_startday,event_startdate, event_enddate,event_finishdate', 'required'),
+            array('event_name, event_detail, event_createdate, event_priority,event_startdate, event_enddate,event_finishdate', 'required'),
             array('mem_id,event_status', 'numerical', 'integerOnly' => true),
             array('event_name', 'length', 'max' => 255),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('event_id, mem_id,event_name, event_detail, event_startday,event_createdate, event_startdate, event_enddate,event_finishdate, event_status', 'safe', 'on' => 'search'),
+            array('event_id, mem_id,event_name, event_detail, event_priority,event_createdate, event_startdate, event_enddate,event_finishdate, event_status', 'safe', 'on' => 'search'),
         );
     }
 
@@ -58,7 +58,7 @@ class Event extends CActiveRecord {
             'event_name' => 'Event Name',
             'event_detail' => 'Event Detail',
             'event_createdate' => 'Event Createdate',
-            'event_startday' => 'Event Startday',
+            'event_priority' => 'Event Priority',
             'event_startdate' => 'Event Startdate',
             'event_enddate' => 'Event Enddate',
             'event_finishdate' => 'Event Finishdate',

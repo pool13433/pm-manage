@@ -44,7 +44,7 @@
                             <div class="btn-group">
                                 <a href="<?= Yii::app()->createUrl('Project/RegisterProject', array('id' => $data['pro_id'])) ?>" class="btn btn-info btn-xs btn-rect"><i class=" icon-pencil"></i> แก้ไข</a>                                
                                 <?php if (Yii::app()->session['member']['mem_status'] == 1): ?>
-                                    <button class="btn btn-info btn-xs btn-rect" data-toggle="modal" data-target="#formProjectModal">
+                                    <button class="btn btn-info btn-xs btn-rect" data-toggle="modal" data-target="#formProjectModal<?=$data['pro_id']?>">
                                         <i class=" icon-pencil"></i> อัพเดท</button>                                
                                     <button class="btn btn-primary btn-xs btn-rect dropdown-toggle" data-toggle="dropdown">
                                         <i class="icon-cog"></i> ปรับสถานะ<span class="caret"></span></button>
@@ -60,8 +60,8 @@
                             </div>
 
                             <!-- ################## modal #####################-->
-                            <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="formProjectModal" class="modal fade" style="display: none;">
-                                <form class="form-horizontal" name="frm-project" id="frm-project">
+                            <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="formProjectModal<?=$data['pro_id']?>" class="modal fade" style="display: none;">
+                                <form class="form-horizontal" name="frm-project<?=$data['pro_id']?>" id="frm-project<?=$data['pro_id']?>">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -120,11 +120,11 @@
                             </div>
                             <script type="text/javascript">
                                 $(function() {
-                                    var valid = $('#frm-project').validationEngine('attach', {
+                                    var valid = $('#frm-project<?=$data['pro_id']?>').validationEngine('attach', {
                                         onValidationComplete: function(form, status) {
                                             //alert("The form status is: " + status + ", it will never submit");
                                             if (status == true) {
-                                                PostJson('frm-project', 'index.php?r=Project/ChangeProjectProperties');
+                                                PostJson('frm-project<?=$data['pro_id']?>', 'index.php?r=Project/ChangeProjectProperties');
                                             }
                                         }
                                     });

@@ -16,8 +16,14 @@ class EventController extends Controller {
         ));
     }
 
-    public function actionNewEvent() {
+    public function actionNewEvent($id = null) {
+        if (empty($id)) {
+            $event = new Event();
+        } else {
+            $event = Event::model()->findByPk($id);
+        }
         $this->render('//backend/form-event', array(
+            'event' => $event,
         ));
     }
 
@@ -27,7 +33,7 @@ class EventController extends Controller {
         $event->event_detail = $_POST['detail'];
         $event->mem_id = Yii::app()->session['member']['mem_id'];
         $event->event_createdate = DateUtil::formatDate($_POST['getdate'], 'yyyy-MM-dd');
-        $event->event_startday = $_POST['day'];
+        $event->event_priority = $_POST['priority'];
         $event->event_startdate = DateUtil::formatDate($_POST['startdate'], 'yyyy-MM-dd');
         $event->event_enddate = DateUtil::formatDate($_POST['enddate'], 'yyyy-MM-dd');
         $event->event_finishdate = DateUtil::formatDate($_POST['enddate'], 'yyyy-MM-dd');
@@ -40,7 +46,11 @@ class EventController extends Controller {
     }
 
     public function actionDeleteEvent($id) {
-        
+        if (Event::model()->deleteByPk($id)) {
+            echo JavascriptUtil::returnJsonArray('1', 'ลบสำเร็จ', '');
+        } else {
+            echo JavascriptUtil::returnJsonArray('0', 'ลบไม่ได้', '');
+        }
     }
 
     public function actionChangeEventStatus($id, $status) {

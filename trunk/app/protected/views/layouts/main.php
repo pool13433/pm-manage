@@ -18,6 +18,21 @@
         <link href="./css/layout2.css" rel="stylesheet" />
         <link href="./plugins/flot/examples/examples.css" rel="stylesheet" />
         <link rel="stylesheet" href="./plugins/timeline/timeline.css" />
+
+        <!-- PAGE LEVEL STYLES -->
+        <link rel="stylesheet" href="./plugins/Font-Awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="./plugins/wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css" />
+        <link rel="stylesheet" href="./css/Markdown.Editor.hack.css" />
+        <link rel="stylesheet" href="./plugins/CLEditor1_4_3/jquery.cleditor.css" />
+        <link rel="stylesheet" href="./css/jquery.cleditor-hack.css" />
+        <link rel="stylesheet" href="./css/bootstrap-wysihtml5-hack.css" />
+        <link rel="stylesheet" href="./plugins/chosen/chosen.min.css" />
+        <style>
+            ul.wysihtml5-toolbar > li {
+                position: relative;
+            }
+        </style>
+        <!-- END PAGE LEVEL  STYLES -->
         <?php
         //<!--GLOBAL SCRIPTS -->
         Yii::app()->clientScript->registerScriptFile('./plugins/jquery-2.0.3.min.js');
@@ -85,6 +100,24 @@
         /*
          * end validate form ****************************************
          */
+
+        /*
+         *  WYSIWYG / Editors
+         */
+        Yii::app()->clientScript->registerScriptFile('./plugins/wysihtml5/lib/js/wysihtml5-0.3.0.js');
+        Yii::app()->clientScript->registerScriptFile('./plugins/bootstrap-wysihtml5-hack.js');
+        /*
+         *  end  WYSIWYG / Editors
+         */
+        
+        /*
+         *  chosen
+         */
+        Yii::app()->clientScript->registerScriptFile('./plugins/chosen/chosen.jquery.min.js');
+        /*
+         *  End chosen
+         */
+        
 
         Yii::app()->clientScript->registerScriptFile('./js/jquery-custom.js');
         Yii::app()->clientScript->registerScriptFile('./js/json-util.js');

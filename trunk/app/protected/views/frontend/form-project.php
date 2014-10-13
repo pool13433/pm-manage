@@ -132,7 +132,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <label class="col-md-3">
+                    <label class="col-md-3 checkbox">
                         <?=  HtmlUtil::checkbox('require_uml', '1', $project['prouml_use'], '')?>
                         ต้องการพัฒนาเอกสารด้วย 
                     </label>
