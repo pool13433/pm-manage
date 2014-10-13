@@ -2,14 +2,22 @@ $(function() {
     $('.dataTable').dataTable();
     $('.datepicker1').datepicker().on('show', function(ev) {
         var today = new Date();
-        var t = today.getDate() + "-" + today.getMonth() + "-" + today.getFullYear();
+        var t = today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+        console.log(' current date : ' + t);
         $('.datepicker1').data({date: t}).datepicker('update');
     });
     $('.datepicker2').datepicker().on('show', function(ev) {
         var today = new Date();
-        var t = today.getDate() + "-" + today.getMonth() + "-" + today.getFullYear();
+        var t = today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
         $('.datepicker2').data({date: t}).datepicker('update');
     });
+    /*----------- BEGIN chosen CODE -------------------------*/
+
+    $(".chzn-select").chosen();
+    $(".chzn-select-deselect").chosen({
+        allow_single_deselect: true
+    });
+    /*----------- END chosen CODE -------------------------*/
 });
 function myGritterBlack(title, text) {
     var unique_id = $.gritter.add({

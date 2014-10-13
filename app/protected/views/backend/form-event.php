@@ -1,7 +1,9 @@
 <form class="form-horizontal" name="frm-event" id="frm-event">
     <div class="box primary">
         <header>
-            <div class="icons"><i class="icon-th"></i></div>
+            <a href="<?= Yii::app()->createUrl('Event/ListEvent') ?>" class="icons btn btn-info btn-rect">
+                <i class="icon-arrow-left"></i> กลับ
+            </a>
             <h5>เหตุการณ์ทั้งหมด</h5>
             <div class="toolbar">
                 <ul class="nav pull-right">                    
@@ -18,7 +20,8 @@
                 <div class="col-md-12">
                     <label class="col-md-2">ชื่อเหตุการณ์</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control validate[required]" name="name"/>
+                        <input type="hidden" name="id" value="<?= $event['event_id'] ?>"/>
+                        <input type="text" class="form-control validate[required]" name="name" value="<?= $event['event_name'] ?>"/>
                     </div>
                 </div>
             </div>
@@ -26,7 +29,7 @@
                 <div class="col-md-12">
                     <label class="col-md-2">รายละเอียด</label>
                     <div class="col-md-8">
-                        <textarea class="form-control validate[required]" name="detail"></textarea>
+                        <textarea class="form-control validate[required]" name="detail"><?= $event['event_detail'] ?></textarea>
                     </div>
                 </div>
             </div>
@@ -35,7 +38,7 @@
                     <label class="col-md-2">วันที่แจ้งเหตุการณ์</label>
                     <div class="col-md-3">
                         <div data-date-format="dd-mm-yyyy" data-date="12-02-2012"  class="input-group input-append date datepicker1">
-                            <input type="text" readonly="" value="" name="getdate" class="form-control validate[required]">
+                            <input type="text" readonly="" value="<?= DateUtil::formatDate($event['event_createdate']) ?>" name="getdate" class="form-control validate[required]">
                             <span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
                         </div>
                     </div>
@@ -43,10 +46,10 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <label class="col-md-2">วันที่เริ่ม</label>
+                    <label class="col-md-2">ความสำคัญ</label>
                     <div class="col-md-2">
-                        <?php $days = DateUtil::getDayOfWeeksEng(); ?>
-                        <?= HtmlUtil::dropdownArray('day', '', $days, '') ?>
+                        <?php $priority = ArrayUtil::priorityEvent(); ?>
+                        <?= HtmlUtil::dropdownArray('priority', $event['event_priority'], $priority, '') ?>
                     </div>
                 </div>
             </div>
@@ -55,7 +58,7 @@
                     <label class="col-md-2">วันที่เริ่ม</label>
                     <div class="col-md-3">
                         <div data-date-format="dd-mm-yyyy" data-date="12-02-2012"  class="input-group input-append date datepicker1">
-                            <input type="text" readonly="" value="" name="startdate" class="form-control validate[required]">
+                            <input type="text" readonly="" value="<?= DateUtil::formatDate($event['event_startdate']) ?>" name="startdate" class="form-control validate[required]">
                             <span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
                         </div>
                     </div>
@@ -66,7 +69,7 @@
                     <label class="col-md-2">วันที่สิ้นสุด</label>
                     <div class="col-md-3">
                         <div data-date-format="dd-mm-yyyy" data-date="12-02-2012"  class="input-group input-append date datepicker1">
-                            <input type="text" readonly="" value="" name="enddate" class="form-control validate[required]">
+                            <input type="text" readonly="" value="<?= DateUtil::formatDate($event['event_enddate']) ?>" name="enddate" class="form-control validate[required]">
                             <span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
                         </div>
                     </div>

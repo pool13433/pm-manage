@@ -62,6 +62,18 @@
                 <li class=""><a href="<?= Yii::app()->createUrl('Member/ListMember') ?>"><i class="icon-angle-right"></i> ผู้ใช้งาน </a></li>                
             </ul>
         </li>
+        <li class="panel ">
+            <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav-news">
+                <i class="icon-tasks"> </i> ข่าว     
+                <span class="pull-right">
+                    <i class="icon-angle-left"></i>
+                </span>
+                &nbsp; <span class="label label-danger">1</span>&nbsp;
+            </a>
+            <ul class="collapse" id="component-nav-news">
+                <li class=""><a href="<?= Yii::app()->createUrl('News/ListNews') ?>"><i class="icon-angle-right"></i> ข่าว </a></li>                
+            </ul>
+        </li>
     <?php elseif($authen->mem_status == 2): ?>
         <li class="panel active">
             <a href="<?= Yii::app()->createUrl('FrontEnd/Home') ?>" >
