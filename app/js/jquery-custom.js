@@ -18,6 +18,16 @@ $(function() {
         allow_single_deselect: true
     });
     /*----------- END chosen CODE -------------------------*/
+
+    /*----------- BEGIN timepicker CODE -------------------------*/
+    $('.timepicker-default').timepicker();
+
+    $('.timepicker-24').timepicker({
+        minuteStep: 1,
+        showSeconds: true,
+        showMeridian: false
+    });
+    /*----------- END timepicker CODE -------------------------*/
 });
 function myGritterBlack(title, text) {
     var unique_id = $.gritter.add({

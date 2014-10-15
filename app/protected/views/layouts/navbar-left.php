@@ -35,21 +35,10 @@
                 &nbsp; <span class="label label-danger">1</span>&nbsp;
             </a>
             <ul class="collapse" id="component-nav-project">
-                <li class=""><a href="<?= Yii::app()->createUrl('Project/ListProject') ?>"><i class="icon-angle-right"></i> ทั้งหมด </a></li>                
+                <li class=""><a href="<?= Yii::app()->createUrl('Project/ListProject') ?>"><i class="icon-angle-right"></i> ทั้งหมด </a></li>
+                <li class=""><a href="<?= Yii::app()->createUrl('Project/ListProjectHistory') ?>"><i class="icon-angle-right"></i> กิจกรรม </a></li>                
             </ul>
-        </li>
-        <li class="panel ">
-            <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav-event">
-                <i class="icon-tasks"> </i> เหตุการณ์     
-                <span class="pull-right">
-                    <i class="icon-angle-left"></i>
-                </span>
-                &nbsp; <span class="label label-danger">1</span>&nbsp;
-            </a>
-            <ul class="collapse" id="component-nav-event">
-                <li class=""><a href="<?= Yii::app()->createUrl('Event/ListEvent') ?>"><i class="icon-angle-right"></i> ทั้งหมด </a></li>                
-            </ul>
-        </li>
+        </li>        
         <li class="panel ">
             <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav-member">
                 <i class="icon-tasks"> </i> ผู้ใช้งาน     
@@ -73,8 +62,8 @@
             <ul class="collapse" id="component-nav-news">
                 <li class=""><a href="<?= Yii::app()->createUrl('News/ListNews') ?>"><i class="icon-angle-right"></i> ข่าว </a></li>                
             </ul>
-        </li>
-    <?php elseif($authen->mem_status == 2): ?>
+        </li>        
+    <?php elseif ($authen->mem_status == 2): ?>
         <li class="panel active">
             <a href="<?= Yii::app()->createUrl('FrontEnd/Home') ?>" >
                 <i class="icon-table"></i> Dashboard-User
@@ -89,12 +78,36 @@
                 &nbsp; <span class="label label-success">3</span>&nbsp;
             </a>
             <ul class="collapse" id="form-nav">
-                <li class=""><a href="<?=  Yii::app()->createUrl('Project/RegisterProject')?>"><i class="icon-angle-right"></i> ลงทะเบียนจ้างงานใหม่ </a></li>
-                <li class=""><a href="<?= Yii::app()->createUrl('Project/ListProject')?>"><i class="icon-angle-right"></i> ดูรายการลงทะเบียนทั้งหมด </a></li>
-                <li class=""><a href="<?= Yii::app()->createUrl('Problem/ListProblem')?>"><i class="icon-angle-right"></i> แจ้งปัญหาการทำเดินการ </a></li>                
+                <li class=""><a href="<?= Yii::app()->createUrl('Project/RegisterProject') ?>"><i class="icon-angle-right"></i> ลงทะเบียนจ้างงานใหม่ </a></li>
+                <li class=""><a href="<?= Yii::app()->createUrl('Project/ListProject') ?>"><i class="icon-angle-right"></i> ดูรายการลงทะเบียนทั้งหมด </a></li>
+                <li class=""><a href="<?= Yii::app()->createUrl('Problem/ListProblem') ?>"><i class="icon-angle-right"></i> แจ้งปัญหาการทำเดินการ </a></li>                
             </ul>
         </li>
-        <?php endif; ?>
+    <?php endif; ?>
+    <li class="panel ">
+        <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav-event">
+            <i class="icon-tasks"> </i> เหตุการณ์     
+            <span class="pull-right">
+                <i class="icon-angle-left"></i>
+            </span>
+            &nbsp; <span class="label label-danger">1</span>&nbsp;
+        </a>
+        <ul class="collapse" id="component-nav-event">
+            <li class=""><a href="<?= Yii::app()->createUrl('Event/ListEvent') ?>"><i class="icon-angle-right"></i> ทั้งหมด </a></li>                
+        </ul>
+    </li>
+    <li class="panel ">
+        <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav-money">
+            <i class="icon-tasks"> </i> รายรับ-รายจ่าย     
+            <span class="pull-right">
+                <i class="icon-angle-left"></i>
+            </span>
+            &nbsp; <span class="label label-danger">1</span>&nbsp;
+        </a>
+        <ul class="collapse" id="component-nav-money">
+            <li class=""><a href="<?= Yii::app()->createUrl('Money/ListMoney') ?>"><i class="icon-angle-right"></i> จัดการ รายรับรายจ่าย </a></li>                
+        </ul>
+    </li>
 </ul>
 
 <!--</div>-->

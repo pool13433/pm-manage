@@ -2854,3 +2854,847 @@ Stack trace:
 #18 {main}
 REQUEST_URI=/pm2015/app/index.php?r=News/ListNews
 ---
+2014/10/14 09:45:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Money/ListMoney".' in C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#1 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=BackEnd/Home
+---
+2014/10/14 09:52:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "เรร".' in C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('?????????')
+#1 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pm2015/app/index.php?r=%E0%B9%80%E0%B8%A3%E0%B8%A3
+---
+2014/10/14 09:57:55 [error] [exception.CException] exception 'CException' with message 'MoneyController cannot find the requested view "//backend/list-money".' in C:\xampp\htdocs\pm2015\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(782): CController->renderPartial('//backend/list-...', Array, true)
+#1 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(9): CController->render('//backend/list-...', Array)
+#2 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#3 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#7 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#8 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=BackEnd/Home
+---
+2014/10/14 10:06:12 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.money_type" is not defined.' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCriteria.php(160): CComponent->__set('money_type', 1)
+#1 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(8): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=BackEnd/Home
+---
+2014/10/14 10:07:18 [error] [exception.CException] exception 'CException' with message 'Money and its behaviors do not have a method or closure named "findAllAttributes".' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(227): CComponent->__call('findAllAttribut...', Array)
+#1 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(8): CActiveRecord->__call('findAllAttribut...', Array)
+#2 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(8): Money->findAllAttributes(Array)
+#3 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#4 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=BackEnd/Home
+---
+2014/10/14 10:07:25 [error] [exception.CException] exception 'CException' with message 'Money and its behaviors do not have a method or closure named "findAllAttribute".' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(227): CComponent->__call('findAllAttribut...', Array)
+#1 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(8): CActiveRecord->__call('findAllAttribut...', Array)
+#2 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(8): Money->findAllAttribute(Array)
+#3 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#4 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=BackEnd/Home
+---
+2014/10/14 10:11:59 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\pm2015\app\protected\views\backend\list-money.php:58)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(869): MoneyController->renderFile()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(782): MoneyController->renderPartial()
+#2 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(15): MoneyController->render()
+#3 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#4 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): MoneyController->runAction()
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): MoneyController->runActionWithFilters()
+#7 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): MoneyController->run()
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+in C:\xampp\htdocs\pm2015\app\protected\views\backend\list-money.php (58)
+in C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php (15)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 11:02:02 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.money_type" is not defined.' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCriteria.php(160): CComponent->__set('money_type', 1)
+#1 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(8): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:02:52 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.CDbCriteria" is not defined.' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCriteria.php(160): CComponent->__set('CDbCriteria', Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(10): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:03:03 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.compare" is not defined.' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCriteria.php(160): CComponent->__set('compare', Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(10): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:03:47 [error] [php] Undefined variable: column (C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php:7)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): MoneyController->runAction()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): MoneyController->runActionWithFilters()
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): MoneyController->run()
+#3 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+in C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php (7)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 11:04:10 [error] [php] Undefined variable: column (C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php:7)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): MoneyController->runAction()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): MoneyController->runActionWithFilters()
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): MoneyController->run()
+#3 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+in C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php (7)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 11:04:19 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.compare" is not defined.' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCriteria.php(160): CComponent->__set('compare', Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(11): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:04:50 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.compare" is not defined.' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCriteria.php(160): CComponent->__set('compare', Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(11): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:10:32 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.compare" is not defined.' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCriteria.php(160): CComponent->__set('compare', 'money_type = 1')
+#1 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(11): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:10:44 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.compare" is not defined.' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCriteria.php(160): CComponent->__set('compare', 'money_type = 1')
+#1 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(11): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:12:25 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.param" is not defined.' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCriteria.php(160): CComponent->__set('param', Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(19): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:29:48 [error] [exception.CException] exception 'CException' with message 'Money and its behaviors do not have a method or closure named "findBuPk".' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(227): CComponent->__call('findBuPk', Array)
+#1 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(39): CActiveRecord->__call('findBuPk', Array)
+#2 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(39): Money->findBuPk('4')
+#3 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionSaveMoney()
+#4 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('SaveMoney')
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/SaveMoney')
+#9 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/SaveMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:29:52 [error] [exception.CException] exception 'CException' with message 'Money and its behaviors do not have a method or closure named "findBuPk".' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(227): CComponent->__call('findBuPk', Array)
+#1 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(39): CActiveRecord->__call('findBuPk', Array)
+#2 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(39): Money->findBuPk('4')
+#3 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionSaveMoney()
+#4 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('SaveMoney')
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/SaveMoney')
+#9 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/SaveMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:29:57 [error] [exception.CException] exception 'CException' with message 'Money and its behaviors do not have a method or closure named "findBuPk".' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(227): CComponent->__call('findBuPk', Array)
+#1 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(39): CActiveRecord->__call('findBuPk', Array)
+#2 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(39): Money->findBuPk('4')
+#3 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionSaveMoney()
+#4 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('SaveMoney')
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/SaveMoney')
+#9 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/SaveMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:39:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1' ORDER BY money_id desc' at line 1. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id :mem_id ORDER BY money_id desc.
+in C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php (16)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 11:39:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1' ORDER BY money_id desc' at line 1. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id :mem_id ORDER BY money_id desc' in C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(16): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:39:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1' ORDER BY money_id desc' at line 1. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id :mem_id ORDER BY money_id desc.
+in C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php (16)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 11:39:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1' ORDER BY money_id desc' at line 1. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id :mem_id ORDER BY money_id desc' in C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(16): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:40:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1' ORDER BY money_id desc' at line 1. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id :mem_id ORDER BY money_id desc.
+in C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php (16)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 11:40:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1' ORDER BY money_id desc' at line 1. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id :mem_id ORDER BY money_id desc' in C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(16): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 11:40:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1' ORDER BY money_id desc' at line 1. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id :mem_id ORDER BY money_id desc.
+in C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php (16)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 11:40:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1' ORDER BY money_id desc' at line 1. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id :mem_id ORDER BY money_id desc' in C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(16): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 17:04:25 [error] [php] Undefined variable: id (C:\xampp\htdocs\pm2015\app\protected\controllers\EventController.php:34)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): EventController->runAction()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): EventController->runActionWithFilters()
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): EventController->run()
+#3 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Event/SaveEvent
+in C:\xampp\htdocs\pm2015\app\protected\controllers\EventController.php (34)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 17:04:29 [error] [php] Undefined variable: id (C:\xampp\htdocs\pm2015\app\protected\controllers\EventController.php:34)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): EventController->runAction()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): EventController->runActionWithFilters()
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): EventController->run()
+#3 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Event/SaveEvent
+in C:\xampp\htdocs\pm2015\app\protected\controllers\EventController.php (34)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 17:04:40 [error] [php] Undefined variable: id (C:\xampp\htdocs\pm2015\app\protected\controllers\EventController.php:34)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): EventController->runAction()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): EventController->runActionWithFilters()
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): EventController->run()
+#3 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Event/SaveEvent
+in C:\xampp\htdocs\pm2015\app\protected\controllers\EventController.php (34)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 17:14:23 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'mem_id' in where clause is ambiguous. The SQL statement executed was: SELECT `e`.`event_id`, `e`.`mem_id`, `e`.`event_name`, `e`.`event_detail`, `e`.`event_createdate`, `e`.`event_priority`, `e`.`event_startdate`, `e`.`event_enddate`, `e`.`event_finishdate`, `e`.`event_status` FROM `event` `e` LEFT JOIN member m ON m.mem_id = e.mem_id WHERE mem_id=:ycp0 ORDER BY event_createdate asc.
+in C:\xampp\htdocs\pm2015\app\protected\controllers\EventController.php (14)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 17:14:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'mem_id' in where clause is ambiguous. The SQL statement executed was: SELECT `e`.`event_id`, `e`.`mem_id`, `e`.`event_name`, `e`.`event_detail`, `e`.`event_createdate`, `e`.`event_priority`, `e`.`event_startdate`, `e`.`event_enddate`, `e`.`event_finishdate`, `e`.`event_status` FROM `event` `e` LEFT JOIN member m ON m.mem_id = e.mem_id WHERE mem_id=:ycp0 ORDER BY event_createdate asc' in C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\EventController.php(14): CActiveRecord->findAll(Object(CDbCriteria))
+#4 [internal function]: EventController->actionListEvent(NULL)
+#5 C:\xampp\htdocs\pm2015\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(EventController), Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(EventController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListEvent')
+#11 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Event/ListEvent')
+#12 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Event/ListEvent
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Event/NewEvent&id=4
+---
+2014/10/14 17:35:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id = :mem_id and money_createdate LIKE "%:currentdate%" ORDER BY money_id desc.
+in C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php (17)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 17:35:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id = :mem_id and money_createdate LIKE "%:currentdate%" ORDER BY money_id desc' in C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(17): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 17:36:12 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id = :mem_id and money_createdate LIKE '%:currentdate%' ORDER BY money_id desc.
+in C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php (17)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 17:36:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id = :mem_id and money_createdate LIKE '%:currentdate%' ORDER BY money_id desc' in C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(17): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/14 17:36:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id = :mem_id and money_createdate LIKE '% :currentdate %' ORDER BY money_id desc.
+in C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php (17)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/14 17:36:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `money` `t` WHERE money_type = :type and mem_id = :mem_id and money_createdate LIKE '% :currentdate %' ORDER BY money_id desc' in C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\MoneyController.php(17): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): MoneyController->actionListMoney()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('ListMoney')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Money/ListMoney')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Money/ListMoney
+---
+2014/10/15 16:19:09 [error] [php] Undefined variable: listNews (C:\xampp\htdocs\pm2015\app\protected\views\backend\list-history.php:30)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(869): ProjectController->renderFile()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(782): ProjectController->renderPartial()
+#2 C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php(284): ProjectController->render()
+#3 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): ProjectController->actionListProjectHistory()
+#4 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): ProjectController->runAction()
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): ProjectController->runActionWithFilters()
+#7 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): ProjectController->run()
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Project/ListProjectHistory
+in C:\xampp\htdocs\pm2015\app\protected\views\backend\list-history.php (30)
+in C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php (284)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/15 16:27:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "NewProjectHistory".' in C:\xampp\htdocs\pm2015\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(270): CController->missingAction('NewProjectHisto...')
+#1 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('NewProjectHisto...')
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Project/NewProj...')
+#3 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Project/NewProjectHistory
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Project/ListProjectHistory
+---
+2014/10/15 16:34:43 [error] [exception.CException] exception 'CException' with message 'ProjectController cannot find the requested view "backend/form-history".' in C:\xampp\htdocs\pm2015\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(782): CController->renderPartial('backend/form-hi...', Array, true)
+#1 C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php(295): CController->render('backend/form-hi...', Array)
+#2 [internal function]: ProjectController->actionNewProjectHistory(NULL)
+#3 C:\xampp\htdocs\pm2015\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProjectController), Array)
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('NewProjectHisto...')
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Project/NewProj...')
+#10 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Project/NewProjectHistory
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Project/ListProjectHistory
+---
+2014/10/15 16:34:52 [error] [php] Undefined variable: problem (C:\xampp\htdocs\pm2015\app\protected\views\backend\form-history.php:24)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(869): ProjectController->renderFile()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(782): ProjectController->renderPartial()
+#2 C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php(295): ProjectController->render()
+#3 unknown(0): ProjectController->actionNewProjectHistory()
+#4 C:\xampp\htdocs\pm2015\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): ProjectController->runAction()
+#8 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): ProjectController->runActionWithFilters()
+#9 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): ProjectController->run()
+#10 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Project/NewProjectHistory
+in C:\xampp\htdocs\pm2015\app\protected\views\backend\form-history.php (24)
+in C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php (295)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/15 16:36:19 [error] [exception.CException] exception 'CException' with message 'Property "ProjectHistory.prob_priority" is not defined.' in C:\xampp\htdocs\pm2015\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(145): CComponent->__get('prob_priority')
+#1 C:\xampp\htdocs\pm2015\framework\base\CModel.php(596): CActiveRecord->__get('prob_priority')
+#2 C:\xampp\htdocs\pm2015\app\protected\views\backend\form-history.php(42): CModel->offsetGet('prob_priority')
+#3 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\pm2015\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\pm2015\framework\web\CController.php(782): CController->renderPartial('//backend/form-...', Array, true)
+#7 C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php(295): CController->render('//backend/form-...', Array)
+#8 [internal function]: ProjectController->actionNewProjectHistory(NULL)
+#9 C:\xampp\htdocs\pm2015\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProjectController), Array)
+#10 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('NewProjectHisto...')
+#15 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Project/NewProj...')
+#16 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Project/NewProjectHistory
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Project/ListProjectHistory
+---
+2014/10/15 16:45:06 [error] [php] Undefined index: topic (C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php:304)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): ProjectController->runAction()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): ProjectController->runActionWithFilters()
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): ProjectController->run()
+#3 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Project/SaveProjectHistory
+in C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php (304)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/15 16:45:12 [error] [php] Undefined index: topic (C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php:304)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): ProjectController->runAction()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): ProjectController->runActionWithFilters()
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): ProjectController->run()
+#3 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Project/SaveProjectHistory
+in C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php (304)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/15 16:46:07 [error] [php] Undefined index: pro_id (C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php:305)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): ProjectController->runAction()
+#1 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): ProjectController->runActionWithFilters()
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): ProjectController->run()
+#3 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Project/SaveProjectHistory
+in C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php (305)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/15 17:30:32 [error] [php] Undefined variable: listData (C:\xampp\htdocs\pm2015\app\protected\views\backend\modal-project.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(869): ProjectController->renderFile()
+#1 C:\xampp\htdocs\pm2015\app\protected\views\layouts\main.php(156): ProjectController->renderPartial()
+#2 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(95): ProjectController->renderInternal()
+#4 C:\xampp\htdocs\pm2015\framework\web\widgets\CContentDecorator.php(76): ProjectController->renderFile()
+#5 C:\xampp\htdocs\pm2015\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\pm2015\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(206): CContentDecorator->run()
+#8 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(300): ProjectController->endWidget()
+#9 C:\xampp\htdocs\pm2015\app\protected\views\layouts\column1.php(6): ProjectController->endContent()
+#10 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(95): ProjectController->renderInternal()
+#12 C:\xampp\htdocs\pm2015\framework\web\CController.php(784): ProjectController->renderFile()
+#13 C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php(295): ProjectController->render()
+#14 unknown(0): ProjectController->actionNewProjectHistory()
+#15 C:\xampp\htdocs\pm2015\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#16 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#17 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams()
+#18 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): ProjectController->runAction()
+#19 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): ProjectController->runActionWithFilters()
+#20 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): ProjectController->run()
+#21 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Project/NewProjectHistory
+in C:\xampp\htdocs\pm2015\app\protected\views\backend\modal-project.php (10)
+in C:\xampp\htdocs\pm2015\app\protected\views\layouts\main.php (156)
+in C:\xampp\htdocs\pm2015\app\protected\views\layouts\column1.php (6)
+2014/10/15 17:30:57 [error] [php] Undefined variable: listData (C:\xampp\htdocs\pm2015\app\protected\views\backend\modal-project.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(869): ProjectController->renderFile()
+#1 C:\xampp\htdocs\pm2015\app\protected\views\layouts\main.php(156): ProjectController->renderPartial()
+#2 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(95): ProjectController->renderInternal()
+#4 C:\xampp\htdocs\pm2015\framework\web\widgets\CContentDecorator.php(76): ProjectController->renderFile()
+#5 C:\xampp\htdocs\pm2015\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\pm2015\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(206): CContentDecorator->run()
+#8 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(300): ProjectController->endWidget()
+#9 C:\xampp\htdocs\pm2015\app\protected\views\layouts\column1.php(6): ProjectController->endContent()
+#10 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(95): ProjectController->renderInternal()
+#12 C:\xampp\htdocs\pm2015\framework\web\CController.php(784): ProjectController->renderFile()
+#13 C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php(284): ProjectController->render()
+#14 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): ProjectController->actionListProjectHistory()
+#15 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): ProjectController->runAction()
+#17 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): ProjectController->runActionWithFilters()
+#18 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): ProjectController->run()
+#19 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Project/ListProjectHistory
+in C:\xampp\htdocs\pm2015\app\protected\views\backend\modal-project.php (10)
+in C:\xampp\htdocs\pm2015\app\protected\views\layouts\main.php (156)
+in C:\xampp\htdocs\pm2015\app\protected\views\layouts\column1.php (6)
+2014/10/15 17:30:58 [error] [php] Undefined variable: listData (C:\xampp\htdocs\pm2015\app\protected\views\backend\modal-project.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(869): ProjectController->renderFile()
+#1 C:\xampp\htdocs\pm2015\app\protected\views\layouts\main.php(156): ProjectController->renderPartial()
+#2 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(95): ProjectController->renderInternal()
+#4 C:\xampp\htdocs\pm2015\framework\web\widgets\CContentDecorator.php(76): ProjectController->renderFile()
+#5 C:\xampp\htdocs\pm2015\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\pm2015\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(206): CContentDecorator->run()
+#8 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(300): ProjectController->endWidget()
+#9 C:\xampp\htdocs\pm2015\app\protected\views\layouts\column1.php(6): ProjectController->endContent()
+#10 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(95): ProjectController->renderInternal()
+#12 C:\xampp\htdocs\pm2015\framework\web\CController.php(784): ProjectController->renderFile()
+#13 C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php(284): ProjectController->render()
+#14 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): ProjectController->actionListProjectHistory()
+#15 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): ProjectController->runAction()
+#17 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): ProjectController->runActionWithFilters()
+#18 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): ProjectController->run()
+#19 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Project/ListProjectHistory
+in C:\xampp\htdocs\pm2015\app\protected\views\backend\modal-project.php (10)
+in C:\xampp\htdocs\pm2015\app\protected\views\layouts\main.php (156)
+in C:\xampp\htdocs\pm2015\app\protected\views\layouts\column1.php (6)
+2014/10/15 17:30:59 [error] [php] Undefined variable: listData (C:\xampp\htdocs\pm2015\app\protected\views\backend\modal-project.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(869): ProjectController->renderFile()
+#1 C:\xampp\htdocs\pm2015\app\protected\views\layouts\main.php(156): ProjectController->renderPartial()
+#2 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(95): ProjectController->renderInternal()
+#4 C:\xampp\htdocs\pm2015\framework\web\widgets\CContentDecorator.php(76): ProjectController->renderFile()
+#5 C:\xampp\htdocs\pm2015\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\pm2015\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(206): CContentDecorator->run()
+#8 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(300): ProjectController->endWidget()
+#9 C:\xampp\htdocs\pm2015\app\protected\views\layouts\column1.php(6): ProjectController->endContent()
+#10 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\pm2015\framework\web\CBaseController.php(95): ProjectController->renderInternal()
+#12 C:\xampp\htdocs\pm2015\framework\web\CController.php(784): ProjectController->renderFile()
+#13 C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php(284): ProjectController->render()
+#14 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(49): ProjectController->actionListProjectHistory()
+#15 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): ProjectController->runAction()
+#17 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): ProjectController->runActionWithFilters()
+#18 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): ProjectController->run()
+#19 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\pm2015\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/pm2015/app/index.php?r=Project/ListProjectHistory
+in C:\xampp\htdocs\pm2015\app\protected\views\backend\modal-project.php (10)
+in C:\xampp\htdocs\pm2015\app\protected\views\layouts\main.php (156)
+in C:\xampp\htdocs\pm2015\app\protected\views\layouts\column1.php (6)
+2014/10/15 17:41:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pro_name' in 'where clause'. The SQL statement executed was: SELECT * FROM `project` `t` WHERE pro_name=:ycp0.
+in C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php (321)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/15 17:41:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pro_name' in 'where clause'. The SQL statement executed was: SELECT * FROM `project` `t` WHERE pro_name=:ycp0' in C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php(321): CActiveRecord->findAll(Object(CDbCriteria))
+#4 [internal function]: ProjectController->actionSearchProjectByWord('11')
+#5 C:\xampp\htdocs\pm2015\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProjectController), Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('SearchProjectBy...')
+#11 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Project/SearchP...')
+#12 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Project/SearchProjectByWord&word=11
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Project/NewProjectHistory
+---
+2014/10/15 17:41:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pro_name' in 'where clause'. The SQL statement executed was: SELECT * FROM `project` `t` WHERE pro_name=:ycp0.
+in C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php (321)
+in C:\xampp\htdocs\pm2015\app\index.php (13)
+2014/10/15 17:41:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pro_name' in 'where clause'. The SQL statement executed was: SELECT * FROM `project` `t` WHERE pro_name=:ycp0' in C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\pm2015\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\pm2015\app\protected\controllers\ProjectController.php(321): CActiveRecord->findAll(Object(CDbCriteria))
+#4 [internal function]: ProjectController->actionSearchProjectByWord('11')
+#5 C:\xampp\htdocs\pm2015\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProjectController), Array)
+#6 C:\xampp\htdocs\pm2015\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\pm2015\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\pm2015\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\pm2015\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('SearchProjectBy...')
+#11 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('Project/SearchP...')
+#12 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/pm2015/app/index.php?r=Project/SearchProjectByWord&word=11
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Project/NewProjectHistory
+---
+2014/10/15 18:45:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "DeleteProjectHistory".' in C:\xampp\htdocs\pm2015\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(270): CController->missingAction('DeleteProjectHi...')
+#1 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('DeleteProjectHi...')
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('News/DeleteProj...')
+#3 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pm2015/app/index.php?r=News/DeleteProjectHistory&id=6
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Project/ListProjectHistory
+---
+2014/10/15 18:46:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "DeleteProjectHistory".' in C:\xampp\htdocs\pm2015\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(270): CController->missingAction('DeleteProjectHi...')
+#1 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('DeleteProjectHi...')
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('News/DeleteProj...')
+#3 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pm2015/app/index.php?r=News/DeleteProjectHistory&id=6
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Project/ListProjectHistory
+---
+2014/10/15 18:46:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "DeleteProjectHistory".' in C:\xampp\htdocs\pm2015\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(270): CController->missingAction('DeleteProjectHi...')
+#1 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('DeleteProjectHi...')
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('News/DeleteProj...')
+#3 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pm2015/app/index.php?r=News/DeleteProjectHistory&id=6
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Project/ListProjectHistory
+---
+2014/10/15 18:46:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "DeleteProjectHistory".' in C:\xampp\htdocs\pm2015\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\pm2015\framework\web\CController.php(270): CController->missingAction('DeleteProjectHi...')
+#1 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(282): CController->run('DeleteProjectHi...')
+#2 C:\xampp\htdocs\pm2015\framework\web\CWebApplication.php(141): CWebApplication->runController('News/DeleteProj...')
+#3 C:\xampp\htdocs\pm2015\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pm2015\app\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pm2015/app/index.php?r=News/DeleteProjectHistory&id=7
+HTTP_REFERER=http://localhost:81/pm2015/app/index.php?r=Project/ListProjectHistory
+---

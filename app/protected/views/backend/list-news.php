@@ -31,7 +31,7 @@
                     <tr>
                         <td  style="width: 5%"><?= $data['news_id'] ?></td>
                         <td  style="width: 15%"><?= $data['news_title'] ?></td>
-                        <td><textarea readonly="" class="form-control"><?= $data['news_detail'] ?></textarea></td>
+                        <td><textarea readonly="" class="form-control" rows="6"><?= $data['news_detail'] ?></textarea></td>
                         <td  style="width: 10%"><?= DateUtil::formatDate($data['news_startdate']) ?></td>
                         <td  style="width: 10%"><?= DateUtil::formatDate($data['news_createdate']) ?></td>
                         <td  style="width: 13%">

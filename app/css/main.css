@@ -1,4 +1,79 @@
 
+@font-face {
+    font-family: "Supermarket";
+    src: url("../fonts/supermarket.ttf")  format("truetype");
+}
+
+@font-face {
+    font-family: "THSarabun";
+    src: url("../fonts/THSarabun.ttf")  format("truetype");    
+}
+
+
+@font-face {
+    font-family: "TH Fahkwang";
+    src: url("../fonts/TH Fahkwang.ttf")  format("truetype");    
+}
+
+@font-face {
+    font-family: "TH Niramit";
+    src: url("../fonts/TH Niramit AS_2.ttf")  format("truetype");    
+}
+
+@font-face {
+    font-family: "TH Mali Grade6";
+    src: url("../fonts/TH Mali Grade6.ttf")  format("truetype");    
+}
+
+
+
+
+
+/*@font-face {
+    font-family: "DroidSans";
+    src: url("../fonts/DroidSans-Bold.ttf")  format("truetype");
+}
+@font-face {
+    font-family: "DroidSans";
+    src: url("../fonts/DroidSans.ttf")  format("truetype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "DroidSans";
+    src: url("../fonts/DroidSansFallback.ttf")  format("truetype");
+    font-style: italic, oblique;
+}
+@font-face {
+    font-family: "DroidSans";
+    src: url("../fonts/DroidSansMono.ttf")  format("truetype");
+    font-weight: bold;
+    font-style: italic, oblique;
+}
+@font-face {
+    font-family: "DroidSans";
+    src: url("../fonts/DroidSerif-Bold.ttf")  format("truetype");
+    font-weight: bold;
+    font-style: italic, oblique;
+}
+
+@font-face {
+    font-family: "DroidSans";
+    src: url("../fonts/DroidSerif-BoldItalic.ttf")  format("truetype");
+    font-weight: bold;
+    font-style: italic, oblique;
+}
+@font-face {
+    font-family: "DroidSans";
+    src: url("../fonts/DroidSerif-Italic.ttf")  format("truetype");
+    font-weight: bold;
+    font-style: italic, oblique;
+}
+@font-face {
+    font-family: "DroidSans";
+    src: url("../fonts/DroidSerif-Regular.ttf")  format("truetype");
+    font-weight: bold;
+    font-style: italic, oblique;
+}*/
 
 
 
