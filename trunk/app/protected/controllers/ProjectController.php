@@ -59,7 +59,11 @@ class ProjectController extends Controller {
             $project->pro_process = "0";
             $project->pro_status = 0;
             $project->pro_pay_step = 0;
-            $project->prouml_use = $_POST['require_uml'];
+            if (empty($_POST['require_uml'])) {
+                $project->prouml_use = 0;
+            } else {
+                $project->prouml_use = $_POST['require_uml'];
+            }
             $pro_save = $project->save();
             if ($pro_save) {
                 // ################## insert array uml #############
@@ -277,4 +281,70 @@ class ProjectController extends Controller {
         }
     }
 
+    // ############################## History #############################################
+    public function actionListProjectHistory() {
+        $criteria = new CDbCriteria();
+        $criteria->alias = 'h';
+        $criteria->join = 'LEFT JOIN project p ON p.pro_id = h.pro_id';
+        $listProjectHistory = ProjectHistory::model()->findAll();
+        $this->render('//backend/list-history', array(
+            'listProjectHistory' => $listProjectHistory,
+        ));
+    }
+
+    public function actionNewProjectHistory($id = null) {
+        if (empty($id)) {
+            $history = new ProjectHistory();
+        } else {
+            $history = ProjectHistory::model()->findByPk($id);
+        }
+        $this->render('//backend/form-history', array(
+            'history' => $history,
+        ));
+        /*
+          $criteria = new CDbCriteria();
+          $criteria->alias = 'h';
+          $criteria->join = 'JOIN project p ON p.pro_id = h.pro_id';
+          $criteria->compare('h.pro_id', $_POST['id']);
+         */
+    }
+
+    public function actionSaveProjectHistory() {
+        if (empty($_POST['id'])) {
+            $history = new ProjectHistory();
+        } else {
+            $history = ProjectHistory::model()->findByPk($_POST['id']);
+        }
+        $history->prohis_topic = $_POST['topic'];
+        $history->pro_id = $_POST['pro_id'];
+        $history->prohis_detail = $_POST['detail'];
+        $history->prohis_getdate = DateUtil::formatDate($_POST['getdate'], 'yyyy-MM-dd');
+        $history->prohis_starttime = $_POST['starttime'];
+        $history->prohis_endtime = $_POST['endtime'];
+        if ($history->save()) {
+            echo JavascriptUtil::returnJsonArray('1', 'บันทึกสำเร็จ', 'index.php?r=Project/ListProjectHistory');
+        } else {
+            echo JavascriptUtil::returnJsonArray('0', 'บันทึก ไม่ได้', '');
+        }
+    }
+
+    public function actionSearchProjectByWord($word) {
+        $criteria = new CDbCriteria();
+        if (!empty($word)) {
+            $criteria->compare('pro_nameth', $word, true, 'OR');
+            $criteria->compare('pro_nameeng', $word, true, 'OR');
+        }
+        $listData = Project::model()->findAll($criteria);
+        echo CJSON::encode($listData);
+    }
+
+    public function actionDeleteProjectHistory($id) {
+        if (ProjectHistory::model()->deleteByPk($id)) {
+            echo JavascriptUtil::returnJsonArray('1', 'ลบสำเร็จ', '');
+        } else {
+            echo JavascriptUtil::returnJsonArray('0', 'ลบไม่ได้', '');
+        }
+    }
+
+    // ############################## History #############################################
 }

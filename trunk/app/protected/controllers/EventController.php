@@ -9,6 +9,7 @@ class EventController extends Controller {
         if (isset($status)):
             $criteria->compare('event_status', $status);
         endif;
+        $criteria->compare('m.mem_id', Yii::app()->session['member']['mem_id']);
         $criteria->order = 'event_createdate asc';
         $listevent = Event::model()->findAll($criteria);
         $this->render('//backend/list-event', array(
@@ -28,7 +29,11 @@ class EventController extends Controller {
     }
 
     public function actionSaveEvent() {
-        $event = new Event();
+        if (empty($_POST['id'])) {
+            $event = new Event();
+        } else {
+            $event = Event::model()->findByPk($_POST['id']);
+        }
         $event->event_name = $_POST['name'];
         $event->event_detail = $_POST['detail'];
         $event->mem_id = Yii::app()->session['member']['mem_id'];

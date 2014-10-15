@@ -85,6 +85,7 @@
          * datepicker **************************************
          */
         Yii::app()->clientScript->registerScriptFile('./plugins/datepicker/js/bootstrap-datepicker.js');
+        Yii::app()->clientScript->registerScriptFile('./plugins/timepicker/js/bootstrap-timepicker.min.js');
         /*
          * end datepicker **************************************
          */
@@ -109,7 +110,7 @@
         /*
          *  end  WYSIWYG / Editors
          */
-        
+
         /*
          *  chosen
          */
@@ -117,14 +118,14 @@
         /*
          *  End chosen
          */
-        
+
 
         Yii::app()->clientScript->registerScriptFile('./js/jquery-custom.js');
         Yii::app()->clientScript->registerScriptFile('./js/json-util.js');
         ?>
 
     </head>
-    <body class="padTop53">
+    <body class="padTop53" style="font-family: 'THSarabun';font-size: 18px;">
         <!-- MAIN WRAPPER -->
         <div id="" >
             <?php $this->renderPartial("//layouts/navbar-top") ?>
@@ -151,7 +152,7 @@
             <?php endif; ?>
             <?php $this->renderPartial("//frontend/login") ?>
             <?php $this->renderPartial("//frontend/form-profile") ?>
-            <?php $this->renderPartial("//frontend/form-changepassword") ?>
+            <?php $this->renderPartial("//frontend/form-changepassword") ?>            
         </div>
     </body>
 </html>
