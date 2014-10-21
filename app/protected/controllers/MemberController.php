@@ -21,14 +21,26 @@ class MemberController extends Controller {
     public function actionCheckLogin() {
         if (!empty($_POST)) {
             $criteria = new CDbCriteria();
-            $criteria->compare('mem_username', $_POST['username']);
-            $criteria->compare('mem_password', $_POST['password']);
-            /* $criteria->compare('mem_status', 1, true, 'OR');
-              $criteria->compare('mem_status', 2, true, 'OR'); */
+            $criteria->compare('mem_username', $_POST['username'], false, 'AND');
+            $criteria->compare('mem_password', $_POST['password'], false, 'AND');
+            $criteria->addCondition('mem_status > 0');
+            //$criteria->condition = 'mem_status > 0';
+            /*  $criteria->compare('mem_status', 2, true, 'OR'); */
 
             $model = Member::model()->find($criteria);
             if (!empty($model)) {
+
+                // ############ + 1 if login success##############
+                $currentdate = date('Y-m-d');
+                if ($currentdate != $model['mem_lastlogindate']) {
+                    Member::model()->updateByPk($model->mem_id, array(
+                        'mem_point' => ($model->mem_point + 1),
+                        'mem_lastlogindate' => $currentdate,
+                    ));
+                }
+                // ################## + 1 ##################                
                 Yii::app()->session['member'] = $model;
+                Yii::app()->session['member']['mem_point'] = ($model->mem_point + 1);
                 $url = '';
                 if ($model->mem_status == 1) {
                     $url = 'index.php?r=BackEnd/Home';
@@ -174,4 +186,5 @@ class MemberController extends Controller {
         $random = StringUtil::generateRandomString(6);
         echo CJSON::encode(array('random' => $random));
     }
+
 }

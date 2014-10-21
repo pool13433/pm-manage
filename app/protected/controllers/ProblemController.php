@@ -2,14 +2,42 @@
 
 class ProblemController extends Controller {
 
-    public function actionListProblem() {
-        $listProblem = Problem::model()->findAll();
+    public function actionListProblem($view = null) {
+
+        if (!isset($view)):
+            // ########### SqlBilder ###############
+            $listProblem = Yii::app()->db->createCommand()
+                    ->select(" p.prob_id,p.prob_name,p.prob_detail,p.prob_createdate,p.mem_id,count(*) count_ans")
+                    ->from("problem p")
+                    ->leftJoin("problem_answer pa", "p.prob_id = pa.prob_id") //
+                    ->group(" pa.prob_id")
+                    ->queryAll();        
+        // ###############
+        else:
+            // ########### SqlBilder ###############
+            $listProblem = Yii::app()->db->createCommand()
+                    ->select(" p.prob_id,p.prob_name,p.prob_detail,p.prob_createdate,p.mem_id,count(*) count_ans")
+                    ->from("problem p")
+                    ->leftJoin("problem_answer pa", "p.prob_id = pa.prob_id") //
+                    ->where(" p.prob_view = " . $view)
+                    ->group(" pa.prob_id")
+                    ->queryAll();
+        // ###############
+        endif;
+
         $this->render('//frontend/list-problem', array(
             'listProblem' => $listProblem,
         ));
     }
 
     public function actionViewProblem($id) {
+        // ############# update view problem ############
+        if (Yii::app()->session['member']['mem_status'] == 1) {
+            Problem::model()->updateByPk($id, array(
+                'prob_view' => 1
+            ));
+        }
+        // ############# update view problem ############
         $criteria_ = new CDbCriteria();
         $criteria_->alias = 'p';
         $criteria_->join = 'LEFT JOIN member m ON m.mem_id = p.mem_id';
@@ -83,6 +111,11 @@ class ProblemController extends Controller {
         } else {
             echo JavascriptUtil::returnJsonArray('0', 'ลบไม่ได้', '');
         }
+    }
+
+    public function actionEditAnswer($id) {
+        $answer = ProblemAnswer::model()->findByPk($id);
+        echo CJSON::encode($answer);
     }
 
 }

@@ -22,6 +22,7 @@
                     <th>ชื่องาน</th>
                     <th>รายละเอียด</th>
                     <th>วันแจ้ง</th>
+                    <th>จำนวนคำตอบ</th>
                     <th>เครื่องมือ</th>
                 </tr>
             </thead>
@@ -32,11 +33,16 @@
                         <td  style="width: 15%"><?= $data['prob_name'] ?></td>
                         <td><textarea readonly="" class="form-control"><?= $data['prob_detail'] ?></textarea></td>
                         <td  style="width: 10%"><?= DateUtil::formatDate($data['prob_createdate']) ?></td>
-                        <td  style="width: 20%">
+                        <td  style="width: 10%">
+                            <span class="label label-warning"><?= $data['count_ans'] ?></span>
+                        </td>
+                        <td  style="width: 15%">
                             <div class="btn-group">
-                                <a href="<?= Yii::app()->createUrl('Problem/NewProblem', array('id' => $data['prob_id'])) ?>" class="btn btn-info btn-rect btn-xs" ><i class="icon-pencil"></i> แก้ไข</a>
                                 <a href="<?= Yii::app()->createUrl('Problem/ViewProblem', array('id' => $data['prob_id'])) ?>" class="btn btn-warning btn-rect btn-xs" ><i class="icon-eye-open"></i> ดู</a>
-                                <button type="button" class="btn btn-danger btn-xs btn-rect" onclick="return deleteItem(<?= $data['prob_id'] ?>,'index.php?r=Problem/DeleteProblem')"><i class=" icon-trash"></i> ลบ</button>
+                                <?php if(Yii::app()->session['member']['mem_id']==$data['mem_id']): ?>
+                                <a href="<?= Yii::app()->createUrl('Problem/NewProblem', array('id' => $data['prob_id'])) ?>" class="btn btn-info btn-rect btn-xs" ><i class="icon-pencil"></i> แก้ไข</a>                                
+                                <button type="button" class="btn btn-danger btn-xs btn-rect" onclick="return deleteItem(<?= $data['prob_id'] ?>, 'index.php?r=Problem/DeleteProblem')"><i class=" icon-trash"></i> ลบ</button>
+                                <?php endif; ?>
                             </div>
                         </td>
                     </tr>

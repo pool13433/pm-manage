@@ -30,11 +30,11 @@
                 <?php foreach ($listNews as $data): ?>
                     <tr>
                         <td  style="width: 5%"><?= $data['news_id'] ?></td>
-                        <td  style="width: 15%"><?= $data['news_title'] ?></td>
+                        <td  style="width: 15%;"><?= $data['news_title'] ?></td>
                         <td><textarea readonly="" class="form-control" rows="6"><?= $data['news_detail'] ?></textarea></td>
-                        <td  style="width: 10%"><?= DateUtil::formatDate($data['news_startdate']) ?></td>
-                        <td  style="width: 10%"><?= DateUtil::formatDate($data['news_createdate']) ?></td>
-                        <td  style="width: 13%">
+                        <td  style="width: 10%;"><?= DateUtil::formatDate($data['news_startdate']) ?></td>
+                        <td  style="width: 10%;"><?= DateUtil::formatDate($data['news_createdate']) ?></td>
+                        <td  style="width: 13%;">
                             <div class="btn-group">
                                 <a href="<?= Yii::app()->createUrl('News/NewNews', array('id' => $data['news_id'])) ?>" class="btn btn-info btn-rect btn-xs" ><i class="icon-pencil"></i> แก้ไข</a>                                
                                 <button type="button" class="btn btn-danger btn-xs btn-rect" onclick="return deleteItem(<?= $data['news_id'] ?>, 'index.php?r=News/DeleteNews')"><i class=" icon-trash"></i> ลบ</button>

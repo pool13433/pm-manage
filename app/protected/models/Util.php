@@ -16,4 +16,22 @@ class Util {
         return $array[2] . "-" . $array[1] . "-" . $array[0];
     }
 
+    public static function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, strlen($characters) - 1)];
+        }
+        return $randomString;
+    }
+
+    public static function explodStrFile($filename) {
+        // ########## splite file ########
+        return array(
+            "type" => end(explode(".", strtolower($filename))),
+            "name" => substr(strtolower($filename), strpos(strtolower($filename), '.') + 1),
+        );
+        // ########## splite file ########
+    }
+
 }

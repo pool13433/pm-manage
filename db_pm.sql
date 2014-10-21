@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2014 at 03:16 PM
+-- Generation Time: Oct 15, 2014 at 06:57 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -32,27 +32,31 @@ CREATE TABLE IF NOT EXISTS `event` (
   `event_name` varchar(255) NOT NULL,
   `event_detail` text NOT NULL,
   `event_createdate` date NOT NULL,
-  `event_startday` varchar(25) NOT NULL,
+  `event_priority` int(1) NOT NULL COMMENT 'ความสำคัญ 0 = ธรรมดา, 1 = เร่งด่วน 2 = ด่วนมา',
   `event_startdate` date NOT NULL,
   `event_enddate` date NOT NULL,
   `event_finishdate` date NOT NULL,
   `event_status` int(11) NOT NULL DEFAULT '0' COMMENT '0= รอ , 1= ดำเนิน,2 = เสร็จ',
   PRIMARY KEY (`event_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`event_id`, `mem_id`, `event_name`, `event_detail`, `event_createdate`, `event_startday`, `event_startdate`, `event_enddate`, `event_finishdate`, `event_status`) VALUES
-(1, 0, 'test', 'test', '0000-00-00', '', '0000-00-00', '0000-00-00', '2014-10-12', 2),
-(2, 0, 'testdate', 'testdate', '2014-09-03', '', '2014-09-10', '2014-09-03', '2014-10-12', 2),
-(3, 0, 'new event', 'new event new event new event new event new event new event new event new event', '2014-09-02', '', '2014-09-10', '2014-09-25', '2014-10-12', 2),
-(4, 0, 'enddate', 'enddate', '2014-09-10', '', '2014-09-10', '2014-09-09', '2014-10-12', 2),
-(5, 1, 'poolsawat', 'poolsawat', '2014-09-02', '', '2014-09-17', '2014-09-16', '2014-10-12', 2),
-(6, 1, 'เเที่ยว สวน ยาง ระยอง', 'เเที่ยว สวน ยาง ระยอง', '2014-09-10', 'Mon', '2014-09-10', '2014-09-19', '2014-10-12', 2),
-(7, 1, 'ไปไหนกันดีในวันหยุด', 'ไปไหนกันดีในวันหยุด', '2014-09-12', 'Mon', '2014-09-15', '2014-09-19', '2014-10-12', 2),
-(8, 1, 'ฮาๆๆๆๆๆ', 'ฮาๆๆๆๆๆ', '2014-09-12', 'Mon', '2014-09-15', '2014-09-24', '2014-09-24', 0);
+INSERT INTO `event` (`event_id`, `mem_id`, `event_name`, `event_detail`, `event_createdate`, `event_priority`, `event_startdate`, `event_enddate`, `event_finishdate`, `event_status`) VALUES
+(1, 0, 'test', 'test', '0000-00-00', 0, '0000-00-00', '0000-00-00', '2014-10-12', 2),
+(2, 0, 'testdate', 'testdate', '2014-09-03', 0, '2014-09-10', '2014-09-03', '2014-10-12', 2),
+(3, 0, 'new event', 'new event new event new event new event new event new event new event new event', '2014-09-02', 0, '2014-09-10', '2014-09-25', '2014-10-12', 2),
+(4, 1, 'enddate enddate enddate enddate', 'enddate', '2014-09-10', 0, '2014-09-10', '2014-09-09', '2014-09-09', 0),
+(5, 1, 'poolsawat', 'poolsawat', '2014-09-02', 0, '2014-09-17', '2014-09-16', '2014-10-12', 2),
+(6, 1, 'เเที่ยว สวน ยาง ระยอง', 'เเที่ยว สวน ยาง ระยอง', '2014-09-10', 0, '2014-09-10', '2014-09-19', '2014-10-12', 2),
+(8, 1, 'ฮาๆๆๆๆๆ', 'ฮาๆๆๆๆๆ', '2014-09-12', 0, '2014-09-15', '2014-09-24', '2014-09-24', 0),
+(9, 1, 'ฮาๆๆๆๆๆ', 'ฮาๆๆๆๆๆ', '2014-09-12', 0, '2014-09-15', '2014-09-24', '2014-09-24', 0),
+(12, 1, 'ฮาๆๆๆๆๆ', 'ฮาๆๆๆๆๆ', '2014-09-12', 2, '2014-09-15', '2014-09-24', '2014-09-24', 0),
+(13, 1, 'ฮาๆๆๆๆๆ', 'ฮาๆๆๆๆๆ', '2014-09-12', 2, '2014-09-15', '2014-09-24', '2014-09-24', 0),
+(14, 1, 'เเที่ยว สวน ยาง ระยอง', 'เเที่ยว สวน ยาง ระยอง', '2014-09-10', 0, '2014-09-10', '2014-10-13', '2014-10-13', 0),
+(15, 1, 'เเที่ยว สวน ยาง ระยอง', 'เเที่ยว สวน ยาง ระยอง', '2014-09-10', 0, '2014-09-10', '2014-10-14', '2014-10-14', 0);
 
 -- --------------------------------------------------------
 
@@ -84,9 +88,67 @@ INSERT INTO `member` (`mem_id`, `mem_username`, `mem_password`, `mem_fname`, `me
 (1, 'admin', '1234', 'admin', 'admin', '111', '1111@hotm.xom', '111', 1, 0, 0, '2014-10-12'),
 (2, '111111', '111111', 'q', 'q', '111', '1111@hotm.xom', '111', 2, 0, 0, '2014-10-12'),
 (3, '111111', '11111111', '111111111111111111', '111111111111', '111', 'poon_mp@hotmail.com', '111111111111111', 2, 0, 0, '2014-10-12'),
-(4, '555555', '555555', '555555', '555555', '555555', 'poon_mp@hotmail.com', '555555', 2, 0, 0, '2014-10-12'),
-(5, '2015oo', '2015oo', '2015oo', '2015oo', '2015oo', 'poon_mp@hotmail.com', '2015oo', 0, 0, 0, '2014-10-12'),
+(4, '555555', '555555', '555555', '555555', '555555', 'poon_mp@hotmail.com', '555555', 3, 0, 0, '2014-10-12'),
+(5, '2015oo', '2015oo', '2015oo', '2015oo', '2015oo', 'poon_mp@hotmail.com', '2015oo', 3, 0, 0, '2014-10-12'),
 (6, 'zeenan', 'pwL6cj', 'zeenan', 'zeenan', '0000000000', '000000@hotmail.com', '-', 2, 0, 0, '2014-10-12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `money`
+--
+
+CREATE TABLE IF NOT EXISTS `money` (
+  `money_id` int(11) NOT NULL AUTO_INCREMENT,
+  `mem_id` int(11) NOT NULL,
+  `money_detail` text NOT NULL,
+  `money_price` int(11) NOT NULL,
+  `money_createdate` date NOT NULL,
+  `money_type` int(11) NOT NULL COMMENT '1 = รับ , 2 = จ่าย',
+  PRIMARY KEY (`money_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- Dumping data for table `money`
+--
+
+INSERT INTO `money` (`money_id`, `mem_id`, `money_detail`, `money_price`, `money_createdate`, `money_type`) VALUES
+(2, 0, 'ซื้อของใช้ 6666666666666666666666666', 66666, '2014-10-14', 2),
+(3, 0, 'validate[required]', 11111, '2014-10-14', 1),
+(4, 0, 'dddd44444444444444', 22222, '2014-10-14', 1),
+(5, 0, '333', 3333, '2014-10-14', 1),
+(6, 0, '4444', 4444, '2014-10-14', 1),
+(7, 0, '55566666666666666', 5555, '2014-10-14', 1),
+(8, 0, 'ซื้อของใช้ fgfgfgfgfg', 545454545, '2014-10-14', 2),
+(9, 1, 'กางเกง', 9999, '2014-10-14', 2),
+(11, 2, 'ซื้อกับข้าว', 150, '2014-10-15', 1),
+(12, 2, 'เที่ยว ซ่อง', 1000, '2014-10-15', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `news_id` int(11) NOT NULL AUTO_INCREMENT,
+  `news_title` varchar(255) NOT NULL,
+  `news_detail` text NOT NULL,
+  `news_startdate` date NOT NULL,
+  `news_createdate` date NOT NULL,
+  PRIMARY KEY (`news_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`news_id`, `news_title`, `news_detail`, `news_startdate`, `news_createdate`) VALUES
+(1, '55555555555555555', 'title<br>', '2014-10-10', '2014-10-13'),
+(3, 'ข่าวเกี่ยวกับโปรเจค', '<div><h1>ข่าวเกี่ยวกับโปรเจค</h1></div>', '2014-10-12', '2014-10-13'),
+(4, 'ส่งอีเมลล์', '<h1><b><span class="wysiwyg-color-red">ส่งอีเมลล์</span></b></h1>', '2014-09-28', '2014-10-13'),
+(5, 'แจ้งเรื่องการเขียนโปรแกรม', 'แจ้งเรื่องการเขียนโปรแกรม', '2014-10-13', '2014-10-13'),
+(6, 'กกกกก', 'กกกกกก', '2014-10-08', '2014-10-13');
 
 -- --------------------------------------------------------
 
@@ -193,32 +255,54 @@ CREATE TABLE IF NOT EXISTS `project` (
   `pro_tooldevelop` int(2) NOT NULL COMMENT 'เครื่องมือ',
   `pro_tooldatabase` int(2) NOT NULL COMMENT 'ฐานข้อมูล',
   `pro_applicationtype` int(11) NOT NULL COMMENT 'ลักษณะการพัฒนา (Web app, Windown App,Mobile App)',
-  `pro_remark` text NOT NULL,
+  `pro_process` int(3) NOT NULL DEFAULT '0',
   `pro_status` int(11) NOT NULL COMMENT 'สถานะของโปรเจค 0 = รอ, 1 = ดำเนินการ , 2 = เสร็จ ,3 = ผิดพลาด',
   `pro_pay_step` int(11) NOT NULL COMMENT '(0= รอจ่ายงวดแรก ,1 = จ่ายงวดแรกแล้ว , 2 = จ่ายงวดสองแล้ว 3 = จ่ายงวด สามแล้ว)',
   `prouml_use` int(1) NOT NULL DEFAULT '0' COMMENT 'ต้องการเอกสารพัฒนาระบบด้วยหรือ ไม่ (0 = ไม่เอา , 1 = ต้องการ)',
   PRIMARY KEY (`pro_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `project`
 --
 
-INSERT INTO `project` (`pro_id`, `pro_nameth`, `pro_nameeng`, `mem_id`, `pro_descrition`, `pro_prices`, `pro_startdate`, `pro_enddate`, `pro_createdate`, `pro_paytype`, `pro_pay1`, `pro_pay2`, `pro_pay3`, `pro_tooldevelop`, `pro_tooldatabase`, `pro_applicationtype`, `pro_remark`, `pro_status`, `pro_pay_step`, `prouml_use`) VALUES
-(1, 'test', 'test', 1, 'test', 111, '2014-09-01', '2014-09-28', '2014-10-12', 3, 0, 0, 0, 2, 2, 2, 'remark', 0, 0, 1),
-(2, 'testyesy', 'testyesy', 1, 'testyesy', 111, '2014-09-01', '2014-09-30', '2014-09-28', 0, 0, 0, 0, 2, 1, 1, 'remark', 0, 0, 1),
-(3, 'ทดสอบ', 'ทดสอบ', 1, 'ทดสอบ', 1999, '2014-09-28', '2014-09-28', '2014-09-28', 2, 0, 0, 0, 2, 1, 2, 'remark', 0, 0, 1),
-(4, 'จ้างพัฒนาโปรแกรท', 'จ้างพัฒนาโปรแกรท', 1, 'จ้างพัฒนาโปรแกรท', 11111, '2014-09-03', '2014-09-27', '2014-09-28', 3, 0, 0, 0, 1, 1, 1, 'remark', 0, 0, 1),
-(5, 'โปรแกรมจัดการเอกสาร', 'โปรแกรมจัดการเอกสาร', 1, 'โปรแกรมจัดการเอกสาร', 100000, '2014-10-07', '2014-10-07', '2014-10-07', 2, 0, 0, 0, 2, 1, 1, 'remark', 0, 0, 1),
-(6, '11', '11', 1, '11', 111, '2014-09-08', '2014-09-01', '2014-10-11', 1, 0, 0, 0, 1, 1, 1, 'remark', 0, 0, 1),
-(7, '1', '1', 1, '11', 1, '2014-09-02', '2014-09-08', '2014-10-11', 1, 0, 0, 0, 1, 1, 1, 'remark', 0, 0, 1),
-(8, '11', '11', 1, '11', 11, '2014-09-09', '2014-09-09', '2014-10-11', 1, 0, 0, 0, 1, 1, 1, 'remark', 0, 0, 1),
-(9, '1', '1', 1, '1', 1, '2014-09-02', '2014-09-02', '2014-10-11', 1, 0, 0, 0, 1, 1, 1, 'remark', 0, 0, 1),
-(10, '11', '1', 2, '1', 1, '2014-09-09', '2014-09-09', '2014-10-11', 3, 0, 0, 0, 1, 1, 1, 'remark', 2, 0, 1),
-(11, '1ttttt', '1', 2, '1', 1, '2014-09-09', '2014-09-08', '2014-10-12', 1, 0, 0, 0, 1, 1, 1, 'remark', 0, 0, 1),
-(12, '1', '1', 2, '1', 1, '2014-09-02', '2014-09-09', '2014-10-11', 1, 0, 0, 0, 1, 1, 1, 'remark', 0, 0, 1),
-(13, 'test', 'test', 2, 'test', 1000, '2014-09-11', '2014-09-01', '2014-10-11', 1, 300, 0, 0, 1, 1, 1, 'remark', 0, 0, 1),
-(14, 'ทำระบบจ่ายเงิน', 'Payment System', 2, 'Payment System ระบบจ่ายเงิน', 9000, '2014-09-01', '2014-09-26', '2014-10-11', 3, 0, 0, 0, 2, 1, 1, 'remark', 0, 0, 1);
+INSERT INTO `project` (`pro_id`, `pro_nameth`, `pro_nameeng`, `mem_id`, `pro_descrition`, `pro_prices`, `pro_startdate`, `pro_enddate`, `pro_createdate`, `pro_paytype`, `pro_pay1`, `pro_pay2`, `pro_pay3`, `pro_tooldevelop`, `pro_tooldatabase`, `pro_applicationtype`, `pro_process`, `pro_status`, `pro_pay_step`, `prouml_use`) VALUES
+(15, 'test ระบบ', 'test ระบบ', 2, 'test ระบบ', 10000, '2014-10-12', '2014-10-12', '2014-10-12', 3, 400, 0, 0, 2, 1, 1, 70, 2, 0, 1),
+(16, 'ระบบจัดการโปรเจค', 'Project Management', 2, 'Project Management', 9999, '2014-10-15', '2014-10-15', '2014-10-15', 1, 0, 0, 0, 2, 1, 1, 0, 0, 0, 1),
+(17, 'ระบบ ยืมคืนของวัด', 'temple', 2, 'temple', 98989, '2014-10-15', '2014-10-15', '2014-10-15', 1, 0, 0, 0, 2, 6, 1, 0, 0, 0, 1),
+(18, '555555555555555', '555555555555555', 2, '555555555555555', 2222, '2014-10-15', '2014-10-15', '2014-10-15', 1, 0, 0, 0, 2, 1, 1, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project_history`
+--
+
+CREATE TABLE IF NOT EXISTS `project_history` (
+  `prohis_id` int(11) NOT NULL AUTO_INCREMENT,
+  `pro_id` int(11) NOT NULL,
+  `prohis_topic` varchar(255) NOT NULL,
+  `prohis_detail` text NOT NULL,
+  `prohis_getdate` date NOT NULL,
+  `prohis_starttime` time NOT NULL,
+  `prohis_endtime` time NOT NULL,
+  PRIMARY KEY (`prohis_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `project_history`
+--
+
+INSERT INTO `project_history` (`prohis_id`, `pro_id`, `prohis_topic`, `prohis_detail`, `prohis_getdate`, `prohis_starttime`, `prohis_endtime`) VALUES
+(1, 17, 'dddd  dddd dddd', 'dddd', '2014-10-15', '23:52:45', '23:52:45'),
+(2, 15, 'จัดการนะบบ', 'จัดการนะบบ', '2014-10-07', '08:00:00', '17:00:00'),
+(3, 16, 'getdate', 'getdate', '0000-00-00', '23:39:15', '23:39:15'),
+(4, 16, 'getdategetdategetdategetdategetdate', 'getdate', '2014-00-15', '23:39:45', '23:39:45'),
+(5, 16, 'ppopopo', 'ppopopo', '2014-00-15', '23:40:15', '23:40:15'),
+(7, 16, 'eeeeeeeeeeeeeeeeee', 'eeeeeeeeeeeeeeeeee', '2014-00-01', '23:41:30', '23:41:30'),
+(8, 16, 'sssssssssssssssssssssssssssssssssssssss', 'sssssssssssssssssssssssssssssssssssssss', '2014-10-15', '23:42:15', '23:42:15'),
+(9, 16, 'aaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaa', '2014-09-03', '23:42:30', '23:42:30'),
+(10, 17, 'dddd dddd dddd', 'dddd', '2014-10-15', '23:52:00', '23:52:00');
 
 -- --------------------------------------------------------
 
@@ -232,47 +316,25 @@ CREATE TABLE IF NOT EXISTS `project_lang` (
   `prolan_id` int(11) NOT NULL COMMENT 'รหัสภาษา',
   `prolang_createdate` date NOT NULL,
   PRIMARY KEY (`prolang_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=72 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=88 ;
 
 --
 -- Dumping data for table `project_lang`
 --
 
 INSERT INTO `project_lang` (`prolang_id`, `pro_id`, `prolan_id`, `prolang_createdate`) VALUES
-(5, 3, 2, '2014-09-28'),
-(6, 3, 4, '2014-09-28'),
-(7, 3, 3, '2014-09-28'),
-(8, 3, 1, '2014-09-28'),
-(18, 2, 1, '2014-09-28'),
-(19, 2, 2, '2014-09-28'),
-(20, 2, 3, '2014-09-28'),
-(21, 2, 4, '2014-09-28'),
-(22, 2, 5, '2014-09-28'),
-(26, 4, 1, '2014-09-28'),
-(27, 4, 2, '2014-09-28'),
-(28, 4, 4, '2014-09-28'),
-(29, 4, 5, '2014-09-28'),
-(30, 4, 7, '2014-09-28'),
-(34, 5, 1, '2014-10-07'),
-(35, 5, 2, '2014-10-07'),
-(36, 5, 4, '2014-10-07'),
-(37, 5, 7, '2014-10-07'),
-(41, 13, 1, '2014-10-11'),
-(42, 13, 2, '2014-10-11'),
-(43, 14, 1, '2014-10-11'),
-(44, 14, 2, '2014-10-11'),
-(45, 14, 3, '2014-10-11'),
-(46, 14, 4, '2014-10-11'),
-(62, 11, 1, '2014-10-12'),
-(63, 11, 2, '2014-10-12'),
-(64, 11, 3, '2014-10-12'),
-(65, 11, 4, '2014-10-12'),
-(66, 11, 5, '2014-10-12'),
-(67, 11, 6, '2014-10-12'),
-(68, 11, 7, '2014-10-12'),
-(69, 1, 1, '2014-10-12'),
-(70, 1, 2, '2014-10-12'),
-(71, 1, 4, '2014-10-12');
+(76, 15, 1, '2014-10-12'),
+(77, 15, 2, '2014-10-12'),
+(78, 15, 3, '2014-10-12'),
+(79, 15, 5, '2014-10-12'),
+(80, 16, 1, '2014-10-15'),
+(81, 16, 2, '2014-10-15'),
+(82, 16, 3, '2014-10-15'),
+(83, 16, 5, '2014-10-15'),
+(84, 17, 1, '2014-10-15'),
+(85, 17, 2, '2014-10-15'),
+(86, 18, 1, '2014-10-15'),
+(87, 18, 2, '2014-10-15');
 
 -- --------------------------------------------------------
 
@@ -288,21 +350,7 @@ CREATE TABLE IF NOT EXISTS `project_log` (
   `prolog_fixdate` date NOT NULL,
   `prolog_status` int(1) NOT NULL COMMENT '0 = ยังไมไ่ด้แก้,1 = แก้ไขแล้ว',
   PRIMARY KEY (`prolog_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
-
---
--- Dumping data for table `project_log`
---
-
-INSERT INTO `project_log` (`prolog_id`, `pro_id`, `prolog_name`, `prolog_createdate`, `prolog_fixdate`, `prolog_status`) VALUES
-(1, 1, 'qqqqqqqqqqqqqqqqqq', '2014-09-29', '2014-09-29', 0),
-(3, 0, 'หหหหหทดสอบระบบ', '2014-09-29', '2014-09-29', 0),
-(4, 0, 'sdsdsdsddsdsdsdsdxcxcxc11111111111111', '2014-09-29', '2014-09-29', 0),
-(7, 2, 'new bug', '2014-09-29', '2014-09-29', 0),
-(8, 2, 'new bug new bug new bug new bu', '2014-09-29', '2014-09-29', 0),
-(13, 3, 'newewewewe', '2014-09-30', '2014-09-30', 0),
-(14, 3, 'dfdfdfdf', '2014-09-30', '2014-09-30', 0),
-(15, 1, 'new bug', '2014-09-30', '2014-09-30', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -316,66 +364,24 @@ CREATE TABLE IF NOT EXISTS `project_uml` (
   `pro_id` int(11) NOT NULL COMMENT 'รหัสเลขที่ โปรเจค',
   `prouml_status` int(11) NOT NULL COMMENT '0 = ยังไม่ทำ 1 = กำลังทำ,2 = เสร็จแล้ว',
   PRIMARY KEY (`prouml_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=98 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=109 ;
 
 --
 -- Dumping data for table `project_uml`
 --
 
 INSERT INTO `project_uml` (`prouml_id`, `uml_id`, `pro_id`, `prouml_status`) VALUES
-(8, 1, 3, 2),
-(9, 2, 3, 0),
-(10, 3, 3, 0),
-(11, 4, 3, 0),
-(12, 5, 3, 0),
-(13, 6, 3, 0),
-(14, 7, 3, 0),
-(15, 8, 3, 0),
-(16, 9, 3, 0),
-(17, 10, 3, 0),
-(18, 11, 3, 0),
-(19, 12, 3, 0),
-(20, 13, 3, 0),
-(42, 1, 2, 0),
-(43, 2, 2, 0),
-(44, 3, 2, 0),
-(45, 4, 2, 0),
-(46, 5, 2, 0),
-(47, 6, 2, 0),
-(48, 7, 2, 0),
-(49, 8, 2, 0),
-(50, 9, 2, 0),
-(51, 10, 2, 0),
-(52, 11, 2, 0),
-(53, 12, 2, 0),
-(54, 13, 2, 0),
-(63, 1, 4, 2),
-(64, 4, 4, 1),
-(65, 7, 4, 1),
-(66, 10, 4, 1),
-(67, 13, 4, 0),
-(76, 1, 5, 2),
-(77, 5, 5, 0),
-(78, 1, 1, 0),
-(79, 2, 1, 0),
-(80, 3, 1, 0),
-(81, 4, 1, 0),
-(82, 7, 1, 0),
-(83, 10, 1, 0),
-(84, 11, 1, 0),
-(85, 13, 1, 0),
-(86, 1, 13, 0),
-(87, 2, 13, 0),
-(88, 5, 13, 0),
-(89, 1, 14, 2),
-(90, 7, 14, 1),
-(91, 9, 14, 1),
-(92, 12, 14, 1),
-(93, 13, 14, 0),
-(94, 1, 11, 0),
-(95, 2, 11, 0),
-(96, 3, 11, 0),
-(97, 6, 11, 0);
+(98, 1, 15, 0),
+(99, 7, 15, 2),
+(100, 9, 15, 0),
+(101, 12, 15, 0),
+(102, 13, 15, 0),
+(103, 1, 16, 0),
+(104, 2, 16, 0),
+(105, 4, 16, 0),
+(106, 8, 16, 0),
+(107, 13, 16, 0),
+(108, 1, 17, 0);
 
 -- --------------------------------------------------------
 
