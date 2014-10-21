@@ -213,51 +213,6 @@ class ProjectController extends Controller {
         }
     }
 
-    public function actionListProjectLog($id = null, $proid = null) {
-        if (empty($id)) {
-            $project_log = new ProjectLog();
-        } else {
-            $project_log = ProjectLog::model()->findByPk($id);
-        }
-        $project_log->pro_id = $proid;
-
-        $criteria = new CDbCriteria();
-        $criteria->alias = 'l';
-        $criteria->join = ' LEFT JOIN project p ON p.pro_id = l.pro_id';
-        $criteria->compare('l.pro_id', $proid);
-
-        $model = ProjectLog::model()->findAll($criteria);
-        $this->render('//front/list_project_log', array(
-            'project_log' => $project_log,
-            'listProjectLog' => $model,
-        ));
-    }
-
-    public function actionSaveProjectLog() {
-        if (!empty($_POST)) {
-            if (empty($_POST['id'])) {
-                $project_log = new ProjectLog();
-            } else {
-                $project_log = ProjectLog::model()->findByPk($_POST['id']);
-            }
-            $project_log->prolog_name = $_POST['name'];
-            $project_log->pro_id = $_POST['proid'];
-            $project_log->prolog_createdate = new CDbExpression('NOW()');
-            $project_log->prolog_fixdate = new CDbExpression('NOW()');
-            $project_log->prolog_status = 0;
-            $project_log->save();
-
-            $this->redirect(array('Project/ListProjectLog', 'proid' => $_POST['proid']));
-        }
-    }
-
-    public function actionDeleteProjectLog($id) {
-        if (ProjectLog::model()->deleteByPk($id)) {
-            echo 'success';
-        }
-        //$this->redirect(array('Project/ListProjectLog', 'proid' => $proid));
-    }
-
     public function actionChangeProjectStatus($id, $status) {
         $project = Project::model()->findByPk($id);
         $project->pro_status = $status;
@@ -347,4 +302,67 @@ class ProjectController extends Controller {
     }
 
     // ############################## History #############################################
+    // ############################# Log #######################################
+    public function actionListProjectLog() {
+        $criteria = new CDbCriteria();
+        $criteria->alias = 'l';
+        $criteria->join = ' LEFT JOIN project p ON p.pro_id = l.pro_id';
+
+        $model = ProjectLog::model()->findAll($criteria);
+        $this->render('//backend/list-log', array(
+            'listProjectLog' => $model,
+        ));
+    }
+
+    public function actionNewProjectLog($id = null) {
+        if (empty($id)) {
+            $log = new ProjectLog();
+        } else {
+            $log = ProjectLog::model()->findByPk($id);
+        }
+        $this->render('//backend/form-log', array(
+            'log' => $log,
+        ));
+    }
+
+    public function actionSaveProjectLog() {
+        if (!empty($_POST)) {
+            if (empty($_POST['id'])) {
+                $project_log = new ProjectLog();
+            } else {
+                $project_log = ProjectLog::model()->findByPk($_POST['id']);
+            }
+            $project_log->prolog_name = $_POST['name'];
+            $project_log->pro_id = $_POST['pro_id'];
+            $project_log->prolog_createdate = DateUtil::formatDate($_POST['getdate'], 'yyyy-MM-dd');
+            $project_log->prolog_fixdate = DateUtil::formatDate($_POST['fixdate'], 'yyyy-MM-dd');
+            $project_log->prolog_status = $_POST['status'];
+            if ($project_log->save()) {
+                echo JavascriptUtil::returnJsonArray('1', 'บันทึกสำเร็จ', 'index.php?r=Project/ListProjectLog');
+            } else {
+                echo JavascriptUtil::returnJsonArray('0', 'ไม่มีค่า ส่งมาบันทึก', '');
+            }
+        } else {
+            echo JavascriptUtil::returnJsonArray('0', 'ไม่มีค่า ส่งมาบันทึก', '');
+        }
+    }
+
+    public function actionDeleteProjectLog($id) {
+        if (ProjectLog::model()->deleteByPk($id)) {
+            echo JavascriptUtil::returnJsonArray('1', 'ลบสำเร็จ', '');
+        } else {
+            echo JavascriptUtil::returnJsonArray('0', 'ลบไม่ได้', '');
+        }
+    }
+
+    // ############################# Log #######################################
+    
+    public function actionJsonGetSumPriceProject(){
+        $sum = Yii::app()->db->createCommand()
+                    ->select("pro_id,
+	pro_nameth,pro_nameeng,
+	pro_prices,sum(pro_pay1+pro_pay2+pro_pay3) as sumpay'")
+                    ->from("project")
+                    ->group("pro_id");
+    }
 }

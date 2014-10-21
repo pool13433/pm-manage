@@ -29,6 +29,71 @@ $(function() {
     });
     /*----------- END timepicker CODE -------------------------*/
 });
+
+function redirectDelay(url, timer) {
+    setTimeout(function() {
+        window.location.href = url; //will redirect to your blog page (an ex: blog.html)
+    }, (timer * 1000)); //will call the function after 2 secs.
+}
+function reloadDelay(timer) {
+    setTimeout(function() {
+        window.location.reload();//will redirect to your blog page (an ex: blog.html)
+    }, (timer * 1000)); //will call the function after 2 secs.
+}
+function goUrl(url) {
+    window.location.href = url; //will redirect to your blog page (an ex: blog.html)
+}
+function deleteItem(id, url) {
+    if (confirm('ยืนยันการลบข้อมูล รหัส [ ' + id + ' ]  ใช่ [OK], ไม่ใช่ [Cancel] ')) {
+        $.ajax({
+            url: url,
+            data: {
+                id: id,
+            },
+            type: 'get',
+            dataType: 'json',
+            success: function(data) {
+                if (data.status == '1') {
+                    notyMessage(data.msg, 'topRight', 'success');
+                    reloadDelay(1);
+                    //window.location.reload();
+                } else {
+                    notyMessage(data.msg, 'topRight', 'error');
+                }
+            }
+        });
+        return true;
+    }
+    return false;
+}
+
+
+
+function changeStatusUtil(id, status, url) {
+    if (confirm('ยืนยันการเปลี่ยนสถานะ รหัส [ ' + id + ' ] ใช่ [OK] , ไม่ใช่ [Cancel] ')) {
+        $.ajax({
+            url: url,
+            data: {
+                id: id,
+                status: status
+            },
+            type: 'get',
+            dataType: 'json',
+            success: function(data) {
+                if (data.status == '1') {
+                    notyMessage(data.msg, 'topRight', 'success');
+                    reloadDelay(2);
+                    //window.location.reload();
+                } else {
+                    notyMessage(data.msg, 'topRight', 'error');
+                }
+            }
+        });
+        return true;
+    }
+    return false;
+}
+
 function myGritterBlack(title, text) {
     var unique_id = $.gritter.add({
         // (string | mandatory) the heading of the notification
@@ -143,64 +208,4 @@ function notyMessage(message, tLayout, tType) {
             template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
         });
     });
-}
-function redirectDelay(url, timer) {
-    setTimeout(function() {
-        window.location.href = url; //will redirect to your blog page (an ex: blog.html)
-    }, (timer * 100)); //will call the function after 2 secs.
-}
-function reloadDelay(timer) {
-    setTimeout(function() {
-        window.location.reload();//will redirect to your blog page (an ex: blog.html)
-    }, (timer * 100)); //will call the function after 2 secs.
-}
-function goUrl(url) {
-    window.location.href = url; //will redirect to your blog page (an ex: blog.html)
-}
-function deleteItem(id, url) {
-    if (confirm('ยืนยันการลบข้อมูล รหัส [ ' + id + ' ]  ใช่ [OK], ไม่ใช่ [Cancel] ')) {
-        $.ajax({
-            url: url,
-            data: {
-                id: id,
-            },
-            type: 'get',
-            dataType: 'json',
-            success: function(data) {
-                if (data.status == '1') {
-                    notyMessage(data.msg, 'topRight', 'success');
-                    reloadDelay(5);
-                    //window.location.reload();
-                } else {
-                    notyMessage(data.msg, 'topRight', 'error');
-                }
-            }
-        });
-        return true;
-    }
-    return false;
-}
-function changeStatusUtil(id, status, url) {
-    if (confirm('ยืนยันการเปลี่ยนสถานะ รหัส [ ' + id + ' ] ใช่ [OK] , ไม่ใช่ [Cancel] ')) {
-        $.ajax({
-            url: url,
-            data: {
-                id: id,
-                status: status
-            },
-            type: 'get',
-            dataType: 'json',
-            success: function(data) {
-                if (data.status == '1') {
-                    notyMessage(data.msg, 'topRight', 'success');
-                    reloadDelay(5);
-                    //window.location.reload();
-                } else {
-                    notyMessage(data.msg, 'topRight', 'error');
-                }
-            }
-        });
-        return true;
-    }
-    return false;
 }

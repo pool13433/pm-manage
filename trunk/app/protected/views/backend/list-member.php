@@ -33,7 +33,7 @@
                         <td><?= $data['mem_fname'] . "   " . $data['mem_lname'] ?></td>
                         <td><?= $data['mem_email'] ?></td>
                         <td><?= $data['mem_tel'] ?></td>
-                        <td>
+                        <td style="vertical-align: middle;">
                             <?php if ($data['mem_status'] == 0): ?>
                                 <span class="label label-default">ทั่วไป (รออนุมัติ)</span>
                             <?php elseif ($data['mem_status'] == 1): ?>

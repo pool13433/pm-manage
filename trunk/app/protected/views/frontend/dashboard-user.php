@@ -1,6 +1,6 @@
 <div class="box primary">
     <header>
-        <h5>DashBoard-User</h5>
+        <h5><i class="icon-rss  icon-1x"></i> DashBoard-User</h5>
         <div class="toolbar">
             <ul class="nav pull-right">                    
                 <li>
@@ -42,7 +42,14 @@
                             <?php endforeach; ?>
                         </ul>
                     </div>
-
+                </div>
+                <div class="box primary">
+                    <header>
+                        <h5><i class="icon-calendar icon-1x"></i> ตารางงานของ ThaiSmileSoft.com</h5>
+                    </header>
+                    <body>
+                        <div id="calendar" class="col-lg-12"></div>
+                    </body>
                 </div>
             </div>
             <div class="col-lg-3">
@@ -58,8 +65,68 @@
                     </div>
 
                 </div>
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <i class="icon-bell"></i> File Download
+                    </div>
+                    <div class="panel-body">
+                        <h4>เอกสารประกอบ</h4>
+                        <ul>
+                            <?php foreach ($listFile as $data): ?>
+                                <li>
+                                    <a href="<?= Yii::app()->baseUrl . '/images/uploads/' . $data['file_name'] ?>" target="_blank">
+                                        <?= $data['file_detail'] ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>           
+                    </div>
+                </div>
             </div>            
         </div>
+
     </div>
 </div>
+
+<style>
+
+    body {
+        //margin: 40px 10px;
+        padding: 0;
+        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        font-size: 14px;
+    }
+
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+</style>
+<script type="text/javascript">
+
+    $(function() {
+        $.getJSON('index.php?r=FrontEnd/JsonEventCalendar', '',
+                function(data) {
+                    $.each(data, function(index, value) {
+//                        console.log(' no : ' + index);
+//                        console.log(' value : '+value.title);
+                    });
+                    // ##################### fullcalendar #############
+                    $('#calendar').fullCalendar({
+                        theme: true,
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'month,agendaWeek,agendaDay'
+                        },
+                        defaultDate: '2014-09-12',
+                        editable: true,
+                        eventLimit: true, // allow "more" link when too many events
+                        events: data
+                    });
+                    // ##################### fullcalendar #############
+                });
+    });
+</script>
 

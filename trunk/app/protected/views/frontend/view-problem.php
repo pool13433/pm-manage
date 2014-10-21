@@ -56,9 +56,9 @@
                 <div class="col-md-12">
                     <lable class="col-md-2">ตอบ</lable>
                     <div class="col-md-8">
-                        <input type="hidden" name="problem_id" value="<?= $problem['prob_id'] ?>"/>
-                        <input type="hidden" name="id"/>
-                        <textarea class="form-control validate[required]" name="detail"></textarea>
+                        <input type="hidden" name="problem_id" id="problem_id" value="<?= $problem['prob_id'] ?>"/>
+                        <input type="hidden" name="id" id="answer_id"/>
+                        <textarea class="form-control validate[required]" name="detail" id="detail"></textarea>
                     </div>
                 </div>
             </div>
@@ -79,6 +79,7 @@
                     <th>ชื่อผู้ตอบ</th>
                     <th>รายละเอียด</th>
                     <th>วันที่ตอบ</th>
+                    <th>เครื่องมือ</th>
                 </tr>
             </thead>
             <tbody>
@@ -88,6 +89,12 @@
                         <td style="width: 15%"><?= $data['member']['mem_fname'] . "  " . $data['member']['mem_lname'] ?></td>
                         <td><?= $data['proa_detail'] ?></td>
                         <td style="width: 10%"><?= DateUtil::formatDate($data['proa_createdate']) ?></td>
+                        <td style="width: 15%">
+                            <?php if (Yii::app()->session['member']['mem_id'] == $data['mem_id']): ?>
+                                <button type="button" class="btn btn-info btn-rect btn-xs" onclick="editAnswer(<?= $data['proa_id'] ?>)"><i class="icon-pencil"></i> แก้ไข</button>                                
+                                <button type="button" class="btn btn-danger btn-xs btn-rect" onclick="return deleteItem(<?= $data['proa_id'] ?>, 'index.php?r=Problem/DeleteProblem')"><i class=" icon-trash"></i> ลบ</button>
+                            <?php endif; ?>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -106,6 +113,23 @@
             }
         });
     });
+    function editAnswer(id) {
+        $.ajax({
+            url: 'index.php?r=Problem/EditAnswer',
+            data: {
+                id: id
+            },
+            dataType: 'json',
+            type: 'get',
+            success: function(data) {
+                console.log(data);
+                $('#problem_id').val(data.prob_id);
+                $('#answer_id').val(data.proa_id);
+                $('#detail').val(data.proa_detail);
+                $('#detail').focus();
+            }
+        });
+    }
 </script>
 
 

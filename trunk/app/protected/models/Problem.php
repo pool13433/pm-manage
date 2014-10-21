@@ -43,7 +43,7 @@ class Problem extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'member'=>array(self::BELONGS_TO, 'Member', 'mem_id'),
+            'member' => array(self::BELONGS_TO, 'Member', 'mem_id'),
         );
     }
 
@@ -98,6 +98,18 @@ class Problem extends CActiveRecord {
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
+    }
+
+    public static function countNewProblem() {
+        $problem = Yii::app()->db->createCommand()
+                ->select("count( * ) AS countview0")
+                ->from("problem")
+                ->where("prob_view = 0")
+                ->queryRow();
+
+        //var_dump($problem);
+        $count = $problem["countview0"];
+        return $count;
     }
 
 }

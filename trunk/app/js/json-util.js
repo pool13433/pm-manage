@@ -9,7 +9,7 @@ function PostJson(formid, url) {
             if (data.status == '1') {
                 notyMessage(data.msg, 'topRight', 'success');
                 console.log(' url : '+data.url);
-                redirectDelay(data.url,5);
+                redirectDelay(data.url,2);
                 //window.location.reload();
             } else {
                 notyMessage(data.msg, 'topRight', 'error');

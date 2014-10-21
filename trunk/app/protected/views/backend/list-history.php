@@ -25,6 +25,7 @@
                     <th>วันกิจกรรม</th>
                     <th>เวลาเริ่ม</th>
                     <th>เวลาจบ</th>
+                    <th>รวม</th>
                     <th>เครื่องมือ</th>
                 </tr>
             </thead>
@@ -32,12 +33,13 @@
                 <?php foreach ($listProjectHistory as $data): ?>
                     <tr>
                         <td  style="width: 5%"><?= $data['prohis_id'] ?></td>
-                        <td  style="width: 15%"><?= $data['project']['pro_nameth'] ?></td>
-                        <td  style="width: 15%"><?= $data['prohis_topic'] ?></td>
-                        <td><textarea readonly="" class="form-control"><?= $data['prohis_detail'] ?></textarea></td>
+                        <td  style="width: 10%"><?= $data['project']['pro_nameth'] ?></td>
+                        <td  style="width: 15%"><textarea readonly="" class="form-control"><?= $data['prohis_topic'] ?></textarea></td>
+                        <td style="width: 20%"><textarea readonly="" class="form-control"><?= $data['prohis_detail'] ?></textarea></td>
                         <td  style="width: 10%"><?= DateUtil::formatDate($data['prohis_getdate']) ?></td>
-                        <td  style="width: 10%"><?= DateUtil::formatDate($data['prohis_starttime']) ?></td>
-                        <td  style="width: 10%"><?= DateUtil::formatDate($data['prohis_endtime']) ?></td>
+                        <td  style="width: 10%"><?= $data['prohis_starttime'] ?></td>
+                        <td  style="width: 8%"><?= $data['prohis_endtime'] ?></td>
+                        <td  style="width: 8%"><?= DateUtil::calculateTime($data['prohis_endtime'] , $data['prohis_starttime'] )?></td>
                         <td  style="width: 13%">
                             <div class="btn-group">
                                 <a href="<?= Yii::app()->createUrl('Project/NewProjectHistory', array('id' => $data['prohis_id'])) ?>" class="btn btn-info btn-rect btn-xs" ><i class="icon-pencil"></i> แก้ไข</a>                                

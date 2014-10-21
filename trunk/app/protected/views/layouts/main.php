@@ -27,6 +27,10 @@
         <link rel="stylesheet" href="./css/jquery.cleditor-hack.css" />
         <link rel="stylesheet" href="./css/bootstrap-wysihtml5-hack.css" />
         <link rel="stylesheet" href="./plugins/chosen/chosen.min.css" />
+        <link rel="stylesheet" href="./plugins/fullcalendar-2.1.1/fullcalendar.min.css" />       
+        <link rel="stylesheet" href="./plugins/fullcalendar-2.1.1/fullcalendar.print.css" />         
+        <link rel="stylesheet" href="./plugins/fullcalendar-2.1.1/lib/cupertino/jquery-ui.min.css" />
+        <link rel="stylesheet" href="./plugins/jquery-multiple-file-upload/uploadfile.css"/>
         <style>
             ul.wysihtml5-toolbar > li {
                 position: relative;
@@ -43,12 +47,6 @@
         Yii::app()->clientScript->registerScriptFile('./plugins/gritter/js/jquery.gritter.js');
         Yii::app()->clientScript->registerScriptFile('./js/moreNoti.js');
         //<!--END PAGE LEVEL SCRIPTS -->
-        // <!--PAGE LEVEL SCRIPTS -->
-        /* Yii::app()->clientScript->registerScriptFile('./plugins/flot/jquery.flot.js');
-          Yii::app()->clientScript->registerScriptFile('./plugins/flot/jquery.flot.resize.js');
-          Yii::app()->clientScript->registerScriptFile('./plugins/flot/jquery.flot.time.js');
-          Yii::app()->clientScript->registerScriptFile('./plugins/flot/jquery.flot.stack.js');
-          Yii::app()->clientScript->registerScriptFile('./js/for_index.js'); */
 
         /*
          * noty *************************************************
@@ -119,13 +117,42 @@
          *  End chosen
          */
 
+        /*
+         *  HighChart 4.4.0
+         * C:\xampp\htdocs\pm2015\app\plugins\highcharts-4.0.4\js\highcharts.js
+         */
+        Yii::app()->clientScript->registerScriptFile('./plugins/highcharts-4.0.4/js/highcharts.js');
+        Yii::app()->clientScript->registerScriptFile('./plugins/highcharts-4.0.4/js/highcharts-3d.js');
+        /*
+         *  End HighChart 4.4.0
+         */
 
+        /*
+         * Calendar Event
+         */
+        //Yii::app()->clientScript->registerScriptFile('./plugins/fullcalendar-2.1.1/lib/jquery.min.js');
+        Yii::app()->clientScript->registerScriptFile('./plugins/fullcalendar-2.1.1/lib/moment.min.js');
+        Yii::app()->clientScript->registerScriptFile('./plugins/fullcalendar-2.1.1/fullcalendar.min.js');
+        /*
+         * End Calendar 
+         */
+
+        /*
+         * upload file 
+         * C:\xampp\htdocs\pm2015\app\plugins\plupload-2.1.2\js\plupload.min.js
+         */
+        Yii::app()->clientScript->registerScriptFile('./plugins/jquery-multiple-file-upload/jquery.uploadfile.min.js');
+        //Yii::app()->clientScript->registerScriptFile('./plugins/plupload-2.1.2/js/plupload.min.js');
+        //Yii::app()->clientScript->registerScriptFile('./plugins/plupload-2.1.2/js/moxie.min.js');
+        /*
+         *  end uplaod file
+         */
         Yii::app()->clientScript->registerScriptFile('./js/jquery-custom.js');
         Yii::app()->clientScript->registerScriptFile('./js/json-util.js');
         ?>
 
     </head>
-    <body class="padTop53" style="font-family: 'THSarabun';font-size: 18px;">
+    <body class="padTop53">
         <!-- MAIN WRAPPER -->
         <div id="" >
             <?php $this->renderPartial("//layouts/navbar-top") ?>
@@ -153,7 +180,7 @@
             <?php $this->renderPartial("//frontend/login") ?>
             <?php $this->renderPartial("//frontend/form-profile") ?>
             <?php $this->renderPartial("//frontend/form-changepassword") ?>            
-        </div>
+        </div>        
     </body>
 </html>
 <script type="text/javascript">

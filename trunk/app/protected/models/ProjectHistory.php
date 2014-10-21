@@ -28,7 +28,7 @@ class ProjectHistory extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('pro_id, prohis_topic, prohis_detail, prohis_getdate, prohis_starttime, prohis_endtime', 'required'),
+            array('pro_id, prohis_topic, prohis_detail, prohis_getdate,prohis_startdate, prohis_starttime,prohis_enddate, prohis_endtime', 'required'),
             array('pro_id', 'numerical', 'integerOnly' => true),
             array('prohis_topic', 'length', 'max' => 255),
             // The following rule is used by search().
@@ -56,9 +56,11 @@ class ProjectHistory extends CActiveRecord {
             'prohis_id' => 'Prohis',
             'pro_id' => 'Pro',
             'prohis_topic' => 'Prohis Topic',
-            'prohis_detail' => 'Prohis Detail',
+            'prohis_detail' => 'Prohis Detail',            
             'prohis_getdate' => 'Prohis Getdate',
+            'prohis_startdate' => 'Project StartDate',
             'prohis_starttime' => 'Prohis Starttime',
+            'prohis_enddate' => 'Project Enddate',
             'prohis_endtime' => 'Prohis Endtime',
         );
     }

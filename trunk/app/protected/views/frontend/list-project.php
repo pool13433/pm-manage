@@ -30,7 +30,7 @@
                         <td><?= DateUtil::formatDate($data['pro_startdate']) ?></td>
                         <td><?= DateUtil::formatDate($data['pro_enddate']) ?></td>
                         <td>
-                            <?php
+                            <?php                            
                             if ($data['pro_status'] == 0):
                                 echo '<span class="label label-warning">รอการดำเนินการ</span>';
                             elseif ($data['pro_status'] == 1):
@@ -42,7 +42,7 @@
                         </td>
                         <td style="width: 30%">
                             <div class="btn-group">
-                                <a href="<?= Yii::app()->createUrl('Project/RegisterProject', array('id' => $data['pro_id'])) ?>" class="btn btn-info btn-xs btn-rect"><i class=" icon-pencil"></i> แก้ไข</a>                                
+                                <a href="<?= Yii::app()->createUrl('Project/RegisterProject', array('id' => $data['pro_id'])) ?>" class="btn btn-warning btn-xs btn-rect"><i class=" icon-pencil"></i> แก้ไข</a>                                
                                 <?php if (Yii::app()->session['member']['mem_status'] == 1): ?>
                                     <button class="btn btn-info btn-xs btn-rect" data-toggle="modal" data-target="#formProjectModal<?=$data['pro_id']?>">
                                         <i class=" icon-pencil"></i> อัพเดท</button>                                
