@@ -57,7 +57,7 @@
                 <div class="col-md-12">
                     <label class="col-md-2">โทรศัพท์</label>
                     <div class="col-md-3">
-                        <input type="text" class="form-control validate[required]" name="mobile" value="<?= $member['mem_tel'] ?>"/>
+                        <input type="tel" class="form-control validate[required,custom[phone],minSize[10]]" name="mobile" value="<?= $member['mem_tel'] ?>"/>
                     </div>
                 </div>
             </div>        

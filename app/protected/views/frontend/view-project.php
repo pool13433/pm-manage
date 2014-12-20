@@ -41,10 +41,25 @@
         <div class="form-group">
             <div class="col-md-12">
                 <div class="well well-small">
-                    <span><h4>สถานะการดำเนินการ</h4></span><span class="pull-right"><small><?=$project['pro_process']?>%</small></span>
+                    <span><h4>สถานะการดำเนินการ</h4></span><span class="pull-right"><small><?= $project['pro_process'] ?>%</small></span>
                     <div class="progress-striped active progress lg">
-                        <div style="width: <?=$project['pro_process']?>%" class="progress-bar progress-bar-info"></div>
+                        <div style="width: <?= $project['pro_process'] ?>%" class="progress-bar progress-bar-info"></div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <div class="alert alert-default">
+                    ข้อมูลผู้ว่าจ้าง : <span class="label label-warning">
+                        <?= $project['member']['mem_fname'] ?>
+                    </span><?= Util::spacebar(3) ?>
+                    <span class="label label-warning">
+                        <?= $project['member']['mem_lname'] ?>
+                    </span><?= Util::spacebar(2) ?>    
+                    อีเมลล์ : <span class="label label-warning"><?= $project['member']['mem_email'] ?></span>
+                    โทรศัพท์ : <span class="label label-warning"><?= $project['member']['mem_tel'] ?></span>
+                    ที่อยู่ : <span class="label label-warning"><?= $project['member']['mem_address'] ?></span>
                 </div>
             </div>
         </div>
@@ -85,8 +100,13 @@
         <div class="form-group">
             <div class="col-md-12">
                 <div class="alert alert-success">
-                    รายละเอียด : <span class="label label-warning"><?= $project['pro_descrition'] ?></span>
-                </div>
+                    <div class="row">
+                        <label class="col-md-2">รายละเอียด :</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" readonly><?= $project['pro_descrition'] ?></textarea>
+                        </div>
+                    </div>
+                </div>                
             </div>
         </div>
         <div class="form-group">

@@ -28,4 +28,8 @@
             <?php $this->renderPartial('//backend/grap-money') ?>
         </div>        
     </div>
+    <div class="form-group">
+        <a href="index.php?r=ExportPdf/Mpdf" class="btn btn-primary btn-rect" target="_blank">
+            ออกรายงาน</a>
+    </div>
 </div>

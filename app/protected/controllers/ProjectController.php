@@ -142,6 +142,7 @@ class ProjectController extends Controller {
         $criteriaProject->alias = 'p';
         $criteriaProject->join = 'LEFT JOIN tools_database tb ON tb.tooldata_id = p.pro_tooldatabase';
         $criteriaProject->join = 'LEFT JOIN tools_developer td ON td.tooldev_id = p.pro_tooldevelop';
+        $criteriaProject->join = 'LEFT JOIN member m ON m.mem_id = p.mem_id';
         $criteriaProject->compare('pro_id', $id);
         $project = Project::model()->find($criteriaProject);
 
@@ -274,7 +275,9 @@ class ProjectController extends Controller {
         $history->pro_id = $_POST['pro_id'];
         $history->prohis_detail = $_POST['detail'];
         $history->prohis_getdate = DateUtil::formatDate($_POST['getdate'], 'yyyy-MM-dd');
+        $history->prohis_startdate = DateUtil::formatDate($_POST['startdate'], 'yyyy-MM-dd');
         $history->prohis_starttime = $_POST['starttime'];
+        $history->prohis_enddate = DateUtil::formatDate($_POST['enddate'], 'yyyy-MM-dd');
         $history->prohis_endtime = $_POST['endtime'];
         if ($history->save()) {
             echo JavascriptUtil::returnJsonArray('1', 'บันทึกสำเร็จ', 'index.php?r=Project/ListProjectHistory');

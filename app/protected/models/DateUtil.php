@@ -1,13 +1,43 @@
 <?php
 
 class DateUtil {
+    /*
+     * Example 
+     *  Current language: en_us
+     * Date & time short: 10/28/14 1:29:09 PM            
+     * Date medium: Oct 28, 2014
+     * Time medium: 1:29:09 PM
+     * Date short format: M/d/yy
+     * Time medium format: h:mm:ss a
+     * Parsed date and time: June 4, 2010
+     * Date & time custom format: 10/28/2014 13:29:09
+     * 
+     * 
+     * <ul>
+     * <li>Current language: <?php echo Yii::app()->getLanguage(); ?></li>
+     * <li>Date &amp; time short: <?php echo Yii::app()->dateFormatter->formatDateTime(time(), 'short'); ?></li>
+     * <li>Date medium: <?php echo Yii::app()->dateFormatter->formatDateTime(time(), 'medium', false); ?></li>
+     * <li>Time medium: <?php echo Yii::app()->dateFormatter->formatDateTime(time(), false, 'medium'); ?></li>
+     * <li>Date short format: <?php echo Yii::app()->locale->getDateFormat('short'); ?></li>
+     * <li>Time medium format: <?php echo Yii::app()->locale->getTimeFormat('medium'); ?></li>
+     * <li>Parsed date and time: <?php echo Yii::app()->dateFormatter->format(Yii::app()->locale->getDateFormat('long'),CDateTimeParser::parse('04/06/2010', 'dd/MM/yyyy')); ?></li>
+     * <li>Date &amp; time custom format: <?php echo Yii::app()->dateFormatter->formatDateTime(time(), 'small', 'small'); ?></li> </ul>
+     * 
+     * 
+     */
+
+    
 
     public static function formatDate($dateold, $format = null) {
         $formatDefault = 'dd-MM-yyyy';
         if (!empty($format)) {
             $formatDefault = $format;
         }
-        return Yii::app()->dateFormatter->format($formatDefault, strtotime($dateold));
+        return Yii::app()->dateFormatter->format($formatDefault, $dateold);
+    }
+
+    public static function formatDateTime($dateold) {
+        return Yii::app()->dateFormatter->formatDateTime($dateold, 'short');
     }
 
     public static function calculateDate($date1, $date2) {

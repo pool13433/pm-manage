@@ -56,6 +56,7 @@ class Project extends CActiveRecord {
         return array(
             'tools_developer' => array(self::BELONGS_TO, 'ToolsDeveloper', 'pro_tooldevelop'),
             'tools_database' => array(self::BELONGS_TO, 'ToolsDatabase', 'pro_tooldatabase'),
+            'member' => array(self::BELONGS_TO, 'Member', 'mem_id'),
         );
     }
 
