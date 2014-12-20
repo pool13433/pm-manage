@@ -5,12 +5,15 @@ $date = Yii::app()->session['date'];
     <div class="panel panel-primary">
         <div class="panel-heading">
             <i class="icon-comments"></i>
-            <label class="label label-warning">รายรับ-รายจ่าย ของ <?= $date['D'] ."-".$date['M'] . " - " . $date['Y'] ?></label>
+            <label class="label label-warning">รายรับ-รายจ่าย ของ <?= $date['D'] . "-" . $date['M'] . " - " . $date['Y'] ?></label>
             <div class="btn-group pull-right">
+                <a href="#" target="_blank" id="btn-export" class="btn btn-info btn-rect" onclick="exportPdf()">
+                    <i class="icon-print"></i> ออกรายงาน
+                </a>
                 <button data-toggle="dropdown" type="button">
                     <i class="icon-chevron-down"></i>
                 </button>
-                <ul class="dropdown-menu slidedown">
+                <ul class="dropdown-menu slidedown">                    
                     <li>
                         <a href="#" onclick="reloadDelay(1)">
                             <i class="icon-refresh"></i> Refresh
@@ -291,6 +294,8 @@ $date = Yii::app()->session['date'];
 </div>
 <script type="text/javascript">
     $(function() {
+        var nowDate = new Date();
+        $('input[name=getdate]').val(nowDate.getDate() + "-" + (nowDate.getMonth() + 1) + "-" + nowDate.getFullYear());
         var valid = $('#frm-money-out').validationEngine('attach', {
             onValidationComplete: function(form, status) {
                 //alert("The form status is: " + status + ", it will never submit");
@@ -337,6 +342,15 @@ $date = Yii::app()->session['date'];
         setTimeout(function() {
             window.location.href = 'index.php?r=Money/ListMoney&day=' + day + '&month=' + month + '&year=' + year;
             notyMessage('เปลี่ยนเดือน ปี', 'topRight', 'success');
+        }, (1 * 1000)); //will call the function after 2 secs.
+    }
+    function exportPdf() {
+        var month = $('select[name=month]').val();
+        var year = $('select[name=year]').val();
+        var day = $('select[name=day]').val();
+        setTimeout(function() {  //index.php?r=ExportPdf/ExportMoney
+            window.location.href = 'index.php?r=ExportPdf/ExportMoney&day=' + day + '&month=' + month + '&year=' + year;
+            notyMessage('ออกรายงาน', 'topRight', 'success');
         }, (1 * 1000)); //will call the function after 2 secs.
     }
 </script>

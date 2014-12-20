@@ -15,69 +15,65 @@
     <div id="div-1" class="accordion-body collapse in body">
         <div class="col-lg-9">
             <ul class="pricing-table">
-                <li class="info col-lg-4">
-                    <h3>Starter</h3>
+                <li class="col-lg-4">
+                    <h3>บริการ ให้คำปรึกษา</h3>
                     <div class="price-body">
                         <div class="price">
-                            Free
+                            ฟรี
                         </div>
                     </div>
                     <div class="features">
                         <ul>
-                            <li>Premium Profile Listing</li>
-                            <li>Unlimited File Access</li>
-                            <li>Free Appointments</li>
-                            <li><strong>5 Bonus Points</strong> every month</li>
-                            <li>Customizable Profile Page</li>
-                            <li><strong>2 months</strong> support</li>
+                            <li>โครงงานนักศึกษา</li>
+                            <li>คิดหัวข้อทำโครงงาน</li>
+                            <li>ออกแบบโครงสร้างฐานข้อมูล</li>                            
                         </ul>
                     </div>
                     <div class="footer">
-                        <a class="btn btn-info btn-rect" href="#">Get Started</a>
+                        <a class="btn btn-info btn-rect" href="<?=  Yii::app()->createUrl('Site/WelcomeDetail', array('cmd' => 'free'))?>">เพิ่มเติม...</a>
                     </div>
                 </li>
                 <li class="active info col-lg-4">
-                    <h3>Basic</h3>
+                    <h3>รับพัฒนาโปรแกรม</h3>
                     <div class="price-body">
                         <div class="price">
-                            <span class="price-figure"><sup>$</sup>24<small>.99</small></span>
-                            <span class="price-term">per month</span>
+                            <span class="price-figure">เริ่มต้น 10,000 บาท<small> ขึ้นไป</small></span>
+                            <span class="price-term">/เว็บไซต์</span>
                         </div>
                     </div>
                     <div class="features">
                         <ul>
-                            <li>Premium Profile Listing</li>
-                            <li>Unlimited File Access</li>
-                            <li>Free Appointments</li>
-                            <li><strong>20 Bonus Points</strong> every month</li>
-                            <li>Customizable Profile Page</li>
-                            <li><strong>6 months</strong> support</li>
+                            <li>Web Application</li>
+                            <li>Windown Application</li>
+                            <li></li>
+                            <li>จดโดเมน</li>
+                            <li>จัดหาพื้นที่โฮสติ้ง</li>
+                            <li>สนับสนุน ดูแล</li>
                         </ul>
                     </div>
                     <div class="footer">
-                        <a class="btn btn-metis-1 btn-lg btn-rect" href="#">Get Started</a>
+                        <a class="btn btn-info btn-rect" href="<?=  Yii::app()->createUrl('Site/WelcomeDetail', array('cmd' => 'best'))?>">เพิ่มเติม...</a>
                     </div>
                 </li>
                 <li class="success col-lg-4">
-                    <h3>Premium</h3>
+                    <h3>เว็บสำเร็จรูป</h3>
                     <div class="price-body">
                         <div class="price">
-                            <span class="price-figure"><sup>$</sup>49<small>.99</small></span>
-                            <span class="price-term">per month</span>
+                            <span class="price-figure">เริ่มต้น 5,000 บาท<small> ขึ้นไป</small></span>
+                            <span class="price-term">/เว็บไซต์</span>
                         </div>
                     </div>
                     <div class="features">
-                        <ul>
-                            <li>Premium Profile Listing</li>
-                            <li>Unlimited File Access</li>
-                            <li>Free Appointments</li>
-                            <li><strong>50 Bonus Points</strong> every month</li>
-                            <li>Customizable Profile Page</li>
-                            <li><strong>Lifetime</strong> support</li>
+                        <ul>                                                        
+                            <li>พัฒนาเว็บไซต์</li>
+                            <li>CMS (Joomla,Wordpress)</li>
+                            <li>จดโดเมน</li>
+                            <li>จัดหาพื้นที่โฮสติ้ง</li>
+                            <li>สนับสนุน ดูแล</li>
                         </ul>
                     </div>
                     <div class="footer">
-                        <a class="btn btn-info btn-rect" href="#">Get Started</a>
+                        <a class="btn btn-info btn-rect" href="<?=  Yii::app()->createUrl('Site/WelcomeDetail', array('cmd' => 'cms'))?>">เพิ่มเติม...</a>
                     </div>
                 </li>
             </ul>
@@ -100,6 +96,20 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            ตารางงาน
+                        </div>
+                        <div class="panel-body">
+                            <a href="index.php?r=Site/CalendarSchedule" class="btn btn-block btn-primary btn-facebook">
+                                <i class="icon-calendar"></i> ดูตารางงาน
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
                     <div class="chat-panel panel panel-primary">
                         <div class="panel-heading">
                             <i class="icon-comments"></i>
@@ -114,13 +124,10 @@
                                         </span>
                                         <div class="chat-body clearfix">
                                             <div class="header">
-                                                <b><?= $data['mem_fname']."  ".$data['mem_lname'] ?></b>
+                                                <b><?= $data['mem_fname'] . "  " . $data['mem_lname'] ?></b>
                                             </div>
                                             <p>
-                                               ที่อยู่ : <?=$data['mem_address']?>
-                                            </p>
-                                            <p>
-                                                เข้าระบบล่าสุด : <?=  DateUtil::formatDate($data['mem_lastlogindate'])?>
+                                                เข้าระบบล่าสุด : <br/> <?= DateUtil::formatDateTime($data['mem_lastlogindate']) ?>
                                             </p>
                                         </div>
                                     </li>                                

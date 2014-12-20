@@ -45,7 +45,6 @@
         //  <!--END GLOBAL SCRIPTS -->
         // <!-- PAGE LEVEL SCRIPTS -->
         Yii::app()->clientScript->registerScriptFile('./plugins/gritter/js/jquery.gritter.js');
-        Yii::app()->clientScript->registerScriptFile('./js/moreNoti.js');
         //<!--END PAGE LEVEL SCRIPTS -->
 
         /*

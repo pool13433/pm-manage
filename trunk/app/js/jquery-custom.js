@@ -167,7 +167,7 @@ function notyMessage(message, tLayout, tType) {
             closeWith: ['button'], // ['click', 'button', 'hover']
             theme: 'defaultTheme',
             type: tType, // success, warning,information ,error ,notification ,alert
-            //timeout: 10000,
+            timeout: 3000,
             callback: {
                 onShow: function() {
                 },

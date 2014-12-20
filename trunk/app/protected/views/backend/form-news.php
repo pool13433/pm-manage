@@ -48,7 +48,8 @@
                 <div class="col-md-12">
                     <label class="col-md-2">ส่งเมลล์ ถึง</label>
                     <div class="col-md-10">
-                        <select data-placeholder="Choose a Email" multiple="multiple"  tabindex="5" class="form-control chzn-select" style="height:25px;">
+                        <input type="hidden" name="mails" id="mails"/>
+                        <select name="mail" data-placeholder="Choose a Email" multiple="multiple"  tabindex="5" class="form-control chzn-select" style="height:25px;">
                             <?php foreach ($emails as $data): ?>
                                 <option value="<?= $data['mem_email'] ?>"><?= $data['mem_email'] ?></option>
                             <?php endforeach; ?>
@@ -75,11 +76,14 @@
         /*----------- BEGIN wysihtml5 CODE -------------------------*/
         $('#wysihtml5').wysihtml5();
         /*----------- END wysihtml5 CODE -------------------------*/
-
+        $(".chzn-select").on('change',function(){
+           $('#mails').val($(".chzn-select").val()); 
+        });
         var valid = $('#frm-news').validationEngine('attach', {
             onValidationComplete: function(form, status) {
                 //alert("The form status is: " + status + ", it will never submit");
                 if (status == true) {
+                    //console.log(' $(".chzn-select").val(); : '+);
                     PostJson('frm-news', 'index.php?r=News/SaveNews');
                 }
             }

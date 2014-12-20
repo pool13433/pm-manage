@@ -32,15 +32,15 @@ class MemberController extends Controller {
 
                 // ############ + 1 if login success##############
                 $currentdate = date('Y-m-d');
-                if ($currentdate != $model['mem_lastlogindate']) {
+                if ($currentdate != DateUtil::formatDate($model['mem_lastlogindate'], 'yyyy-MM-dd')) {
                     Member::model()->updateByPk($model->mem_id, array(
                         'mem_point' => ($model->mem_point + 1),
-                        'mem_lastlogindate' => $currentdate,
+                        'mem_lastlogindate' => new CDbExpression('NOW()'),
                     ));
                 }
                 // ################## + 1 ##################                
                 Yii::app()->session['member'] = $model;
-                Yii::app()->session['member']['mem_point'] = ($model->mem_point + 1);
+                Yii::app()->session['member']['mem_point'] = ($model['mem_point'] + 1);
                 $url = '';
                 if ($model->mem_status == 1) {
                     $url = 'index.php?r=BackEnd/Home';
@@ -99,6 +99,7 @@ class MemberController extends Controller {
             $member->mem_tel = $_POST['mobile'];
             $member->mem_email = $_POST['email'];
             $member->mem_address = $_POST['address'];
+            $member->mem_lastlogindate = new CDbExpression('NOW()');
             $member->mem_point = 0;
             $member->mem_active = 0;
             if (empty($_POST['status'])) {
@@ -109,7 +110,7 @@ class MemberController extends Controller {
             $member->mem_createdate = new CDbExpression('NOW()');
             if ($member->save()) {
                 if (empty(Yii::app()->session['member'])) {
-                    echo JavascriptUtil::returnJsonArray('1', 'ลงทะเบียน สำเร็จ เข้าใช้งานระบบ ได้', 'index.php?r=Site/Index');
+                    echo JavascriptUtil::returnJsonArray('1', 'ลงทะเบียน สำเร็จ กรุณารอการอนุมัติจากระบบ', 'index.php?r=Site/Index');
                 } else {
                     echo JavascriptUtil::returnJsonArray('1', 'บันทึกสำเร็จ', 'index.php?r=Member/ListMember');
                 }

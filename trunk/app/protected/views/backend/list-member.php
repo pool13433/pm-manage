@@ -23,6 +23,7 @@
                     <th>email</th>
                     <th>mobile</th>
                     <th>สถานะ</th>
+                    <th>เข้าระบบ</th>
                     <th>เครื่องมือ</th>
                 </tr>
             </thead>
@@ -46,6 +47,7 @@
                                 <span class="label label-warning">อื่น ๆ</span>
                             <?php endif; ?>
                         </td>
+                        <td><?= $data['mem_point'] ?></td>
                         <td style="width: 20%">
                             <div class="btn-group">
                                 <a href="<?= Yii::app()->createUrl('Member/NewMember', array('id' => $data['mem_id'])) ?>" class="btn btn-info btn-sm btn-rect">

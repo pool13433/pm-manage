@@ -16,6 +16,14 @@ class Util {
         return $array[2] . "-" . $array[1] . "-" . $array[0];
     }
 
+    public static function spacebar($no) {
+        $str = "";
+        for ($i = 0; $i < $no; $i++):
+                $str = $str."&nbsp;";
+        endfor;
+        echo $str;
+    }
+
     public static function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randomString = '';

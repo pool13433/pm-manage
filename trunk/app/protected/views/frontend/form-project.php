@@ -41,6 +41,9 @@
                     <div class="col-md-3">
                         <input type="text" name="price" class="form-control validate[required,custom[number]]" <?= $disabled ?> value="<?= $project['pro_prices'] ?>"/>
                     </div>
+                    <div class="col-md-6">
+                            <span class="label label-info">ราคานี้ ค่าพัฒนาโปรแกรม + ค่าเอกสาร</span>
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -48,6 +51,10 @@
                     <label class="col-md-3">ลักษณะการชำระเงิน</label>
                     <div class="col-md-2">
                         <?= HtmlUtil::dropdownArray('payment', $project['pro_paytype'], ArrayUtil::payemtType(), 'validate[required]', $disabled) ?>
+                    </div>
+                    <label class="col-md-1"></label>
+                    <div class="col-md-6">
+                            <span class="label label-info">ลักษรณะการแบ่งจ่ายชำระเงิน</span>
                     </div>
                 </div>
             </div>

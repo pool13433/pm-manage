@@ -1,4 +1,4 @@
-<form class="form-horizontal" name="frm-file" id="frm-file" method="post" enctype="multipart/form-data">
+﻿<form class="form-horizontal" name="frm-file" id="frm-file" method="post" enctype="multipart/form-data">
     <div class="box primary">
         <header>
             <a href="<?= Yii::app()->createUrl('File/ListFile') ?>" class="icons btn btn-info btn-rect">
@@ -56,7 +56,7 @@
         var settings = {
             url: 'index.php?r=File/UploadFile',
             method: "POST",
-            allowedTypes: "jpg,png,gif,doc,pdf,zip,xls",
+            allowedTypes: "jpg,png,gif,doc,docx,pdf,zip,xls",
             //allowedTypes: "png,gif,jpg,jpeg",
             fileName: "myfile",
             multiple: false,
