@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 class NewsController extends Controller {
 
@@ -41,7 +41,7 @@ class NewsController extends Controller {
         Yii::import('application.extensions.phpmailer.JPhpMailer');
 
         $subject = $_POST['title'];
-        $fromEmail = "poolsawatapin@gmail.com";
+        $fromEmail = "thaismilesoft.com@gmail.com";//"poolsawatapin@gmail.com";
         $message = $_POST['detail'];
         $fromName = "ThaiSmilesoft.com (poolsawat apin (Admin))";
         $mails = array();
