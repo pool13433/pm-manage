@@ -45,12 +45,7 @@
     $(function() {
         var valid = $('#frm-file').validationEngine('attach', {
             onValidationComplete: function(form, status) {
-                //alert("The form status is: " + status + ", it will never submit");
-                if (status == true) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return status;
             }
         });
         var settings = {
